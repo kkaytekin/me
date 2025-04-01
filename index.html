@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kağan Küçükaytekin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bg-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+        .skill-bar {
+            height: 6px;
+            border-radius: 3px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid #bfdbfe;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #3b82f6;
+            margin-top: 12px;
+        }
+        </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-blue-600">Kağan Küçükaytekin</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <!-- <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a> -->
+                </nav>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Kağan Küçükaytekin</h1>
+                <h2 class="text-2xl md:text-3xl font-light mb-6">Machine Learning Engineer</h2>
+                <p class="text-blue-100 mb-8 max-w-lg">Creating intelligent systems and pushing the boundaries of computer vision and robotic applications.</p>
+                <div class="flex space-x-4">
+                    <a href="mailto:kkaytekin@gmail.com" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">Contact Me</a>
+                    <a href="https://www.linkedin.com/in/kagan-kucukaytekin-8717a1107/" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/kkaytekin" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- <a href="#" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">Download CV</a> -->
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white bg-gray-200 overflow-hidden shadow-xl">
+                    <img src="figures/2024-07-21_Fotos-Kagan_05-k.png" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Working" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        I'm a highly motivated and results-driven MSc. graduate from Technical University of Munich's Robotics, Cognition &
+                        Intelligence program with a strong passion for driving innovation in machine learning, computer vision, and
+                        robotics.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        My professional experience includes developing and implementing cutting-edge solutions, from 3D avatar reconstruction to
+                        autonomous driving enhancements. I am eager to contribute my skills to forward-thinking projects in challenging
+                        environments.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Age</h4>
+                                <p class="text-gray-600">29</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">Stuttgart, DE</p>
+                            </div>
+                        </div>
+                        <!-- <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">(415) 555-1234</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <!-- <img src="figures/Dense-Captioning-for-3D-Scenes-with-Transformers.jpg" 
+                         alt="Project 1" class="w-full h-48 object-cover"> -->
+                    <img src="https://github.com/kkaytekin/3DETR-S2C/raw/main/docs/Poster.jpg" 
+                         alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Dense Captioning for 3D Scenes with Transformers</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/kkaytekin/3DETR-S2C?tab=readme-ov-file" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Introduced transformers to different components of a 3D Dense Captioning pipeline to boost performance.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D Computer Vision</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="https://github.com/kkaytekin/tum-adlr-ss22-05/raw/master/pictures/limited_fov/slowing_down.gif" 
+                         alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Social Navigation with Reinforcement Learning</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/kkaytekin/tum-adlr-ss22-05" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Trained an agent to navigate in dynamic environments using reinforcement learning and curriculum learning.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Reinforcement Learning</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images/raw/main/docs/depth_gt_example.png" 
+                         alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Monocular Depth Estimation with Polarimetric Camera</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">A supervised monocular depth prediction model leveraging polarimetric characteristics of light. During the model development, particular emphasis was put on improvement of the depth estimation for photometrically challenging objects.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Numpy</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CNN's</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="figures/ardrone_practical.png" 
+                         alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Autonomous Delivery Drone</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/kkaytekin/ardrone_practicals_2021" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Implemented localization, sensor fusion, navigation, control, and path planning of an autonomous drone.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">C++</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Project 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="https://github.com/kkaytekin/Bimanual-Manipulation/raw/main/images/om.gif" 
+                         alt="Project 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Bimanual Robot Arm Programming</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://github.com/kkaytekin/Bimanual-Manipulation" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Programming two Franka Panda robot arms to achieve collaboration in CoppeliaSim (V-REP).</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Go</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lua</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">V-REP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Work Experience</h2>
+            <div class="relative max-w-3xl mx-auto">
+                <div class="absolute h-full border border-gray-200 left-4 md:left-1/2 transform md:-translate-x-1/2"></div>
+                <!-- TODO: Desktop: On hover, Mobile: On click, expand; show description only then (description = what is written in <p class="text-gray-700">)  -->
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Machine Learning Engineer</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
+                            <p class="text-gray-600 text-sm mb-2">December 2024 - March 2025</p>
+                            <p class="text-gray-700">
+                                Contributed to video-based 3D avatar reconstruction using Gaussian Splatting and SMPL-X.
+                                Built synthetic dataset generation pipeline using Unreal Engine and Blender.
+                                Contributed to research on Egocentric vision, specifically on human mesh recovery from binocular wide-angle cameras.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Master Thesis</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
+                            <p class="text-gray-600 text-sm mb-2">April - November 2024</p>
+                            <p class="text-gray-700">
+                                Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting:
+                                A real-time capable pixel-aligned Gaussian splatting-based method for
+                                realistic novel view synthesis of humans from sparse input images,
+                                enhancing flexibility by reducing reliance on priors and preprocessing:
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Research Intern</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">Huawei Munich Research Center, Munich</h4>
+                            <p class="text-gray-600 text-sm mb-2">June - December 2023</p>
+                            <p class="text-gray-700">
+                                Focused on improving semantic segmentation for autonomous driving in
+                                challenging weather, leveraging self-training, semi-supervised learning, and
+                                data augmentation from generative models like GANs and diffusion
+                                models.
+                                Publication: ControlUDA: Controllable Diffusion-assisted Unsupervised
+                                Domain Adaptation for Cross-Weather Semantic Segmentation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Student Assistant (HiWi)</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">LMU Chair of Statistical Learning & Data Science, Munich</h4>
+                            <p class="text-gray-600 text-sm mb-2">April - September 2023</p>
+                            <p class="text-gray-700">
+                                To support ecology research, proposed leveraging pretrained monocular
+                                depth estimators for animal population estimation in the Bavarian forests.
+                                Demonstrated viability via Proof-of-Concept study. Built the basis for
+                                follow-up work. Identified research directions for ongoing research. Results
+                                and code are still in use for upcoming publications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 5 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Robotics Working Student</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">iteratec GmbH, Munich</h4>
+                            <p class="text-gray-600 text-sm mb-2">November 2021 - March 2022</p>
+                            <p class="text-gray-700">
+                                To achieve 2D-to-3D localization in a digital twin, explored traditional (SIFT,
+                                SURF, ORB, BRISK) and modern (SuperPoint, SuperGlue) feature extraction
+                                & matching methods. With high focus on code quality, actively participated
+                                in collaborative software development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Timeline Item 6 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pl-12">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">IT Rollout Working Student</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">Mercedes-Benz Turkey, Istanbul</h4>
+                            <p class="text-gray-600 text-sm mb-2">August 2019 - June 2020</p>
+                            <p class="text-gray-700">
+                                Streamlined reporting through Excel macros, led team workshops, created
+                                corporate mobile app mock-ups, and managed an Idea Management Portal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 7 -->
+                <div class="mb-12 timeline-item relative pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Product Management Working Student</h3>
+                            <h4 class="text-gray-800 font-medium mb-3">RIO.cloud, Munich</h4>
+                            <p class="text-gray-600 text-sm mb-2">February - September 2018</p>
+                            <p class="text-gray-700">
+                                Collaborated with senior Product Owner in Scrum setting, supported user
+                                tests, aided product development across lifecycle phases of software and
+                                hardware products, crafted user stories meeting customer needs, managed
+                                interdisciplinary teams, orchestrated real-world IoT hardware tests, and
+                                presented key outcomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">My Skills</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="text-blue-600 text-3xl mb-4">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Technical Skills</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">JavaScript</span>
+                                    <span class="text-gray-500">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">React/Node.js</span>
+                                    <span class="text-gray-500">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Python</span>
+                                    <span class="text-gray-500">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="text-blue-600 text-3xl mb-4">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Tools & Platforms</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">AWS/GCP</span>
+                                    <span class="text-gray-500">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Docker/Kubernetes</span>
+                                    <span class="text-gray-500">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">CI/CD</span>
+                                    <span class="text-gray-500">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-gray-50 p-6 rounded-lg h-full">
+                        <div class="text-blue-600 text-3xl mb-4">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Soft Skills</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Leadership</span>
+                                    <span class="text-gray-500">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Communication</span>
+                                    <span class="text-gray-500">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Problem Solving</span>
+                                    <span class="text-gray-500">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Contact Section
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-700 mb-6">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600">john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600">(415) 555-1234</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Kağan Küçükaytekin. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Designed with Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handler
+        const contactForm = document.querySelector('form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
