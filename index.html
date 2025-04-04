@@ -158,7 +158,120 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- TEMPLATE - Uncomment below-->
+                <!-- <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="FILL:ADD_IMG_HERE" 
+                         alt="FILL: Add description" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">PROJECT NAME</h3>
+                            <div class="flex space-x-2">
+                                <a href="FILL:Add link to Github" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 brief-description">Add brief Description</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>item 1</li>
+                            <li>item 2</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Skill 1</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Skill 2</span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300" id="thesis-project">
+                    <img src="figures/thesis_overview.png" alt="Thesis Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Master Thesis: Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting</h3>
+                            <div class="flex space-x-2">
+                                <a href="https://drive.google.com/file/d/1oAo7Dw2zrmrELv5P6MlaZn0_SuYJSsvD/view?usp=sharing" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 brief-description">
+                            A real-time capable pixel-aligned Gaussian splatting-based method for
+                            realistic novel view synthesis of humans from sparse input images,
+                            enhancing flexibility by reducing reliance on priors and preprocessing.
+                        </p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>
+                                Proposed a simpler and more flexible method than the existing methods:
+                                <table class="w-3/4 border-collapse border border-gray-400"> 
+                                    <thead>
+                                        <tr>
+                                            <th class="border border-gray-400 text-xs p-2">Method</th>
+                                            <th class="border border-gray-400 text-xs p-2">Priors</th>
+                                            <th class="border border-gray-400 text-xs p-2">Preprocessing</th>
+                                            <th class="border border-gray-400 text-xs p-2">Limitation</th>
+                                            <th class="border border-gray-400 text-xs p-2">#Params</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">GHG (ECCV24)</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template extraction, Texture-map rearrangement, Scaffold creation</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Fixed angle between cameras, Relies on good SMPL-X estimation</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">17.8M</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">GPS-Gaussian (CVPR24)</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Binocular-View</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Image Rectification</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Max. 72-degree baseline</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">5.5M</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Ours</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">Monocular-View</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
+                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">3.5M</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                Developed a reliable pixel-aligned Gaussian Splatting method for generalizable 360-degree novel view synthesis of human heads from minimal input data and demonstrated capacity on the NPHM dataset.
+                            </li>
+                            <li>
+                                Demonstrated in-domain and cross-domain generalization capability on sparse-view full-body human datasets (THuman 2.0, CustomHumans).
+                            </li>
+                            <li>
+                                Conducted experimental analysis of various extensions to the proposed method, including:
+                                <ul class="list-disc list-inside ml-6">
+                                    <li>In-Domain and Cross-Domain Generalization</li>
+                                    <li>Sub-Resolution Rendering</li>
+                                    <li>Combining Multi-View Information</li>
+                                    <li>Refinement with a Neural Network</li>
+                                    <li>Refinement with non-rigid 3DGS optimization</li>
+                                    <li>Pruning of 3D Gaussians</li>
+                                    <li>Camera Pose Encoding with Plücker Coordinates</li>
+                                    <li>Using Template Priors As Supervision (SMPL-X)</li>
+                                    <li>Transfer Learning with a Frozen Human-Centric Encoder (Sapiens)</li>
+                                    <li>LPIPS as a Loss Function</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Slurm</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Open3D</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NeRFStudio</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Neural Rendering</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D Reconstruction</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gausian Splatting</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transfer Learning</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <!-- <img src="figures/Dense-Captioning-for-3D-Scenes-with-Transformers.jpg" 
                          alt="Project 1" class="w-full h-48 object-cover"> -->
@@ -168,15 +281,27 @@
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Dense Captioning for 3D Scenes with Transformers</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/3DETR-S2C?tab=readme-ov-file" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/3DETR-S2C?tab=readme-ov-file" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">Introduced transformers to different components of a 3D Dense Captioning pipeline to boost performance.</p>
+                        <p class="text-gray-600 mb-4 brief-description">Introduced transformers to different components of a 3D Dense Captioning pipeline to boost performance.</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>As team, we proposed two architectures based on transformers to achieve state of the art performance in 3D Dense Captioning Task.</li>
+                            <li>I mainly focused on 3DETR-S2C, which achieved SOTA results on 3 of the 5 benchmarking criteria.</li>
+                            <li>Briefly, I integrated a transformer backbone to extract features and detect 3D bounding boxes from 3D point clouds, which are then processed further with a Graph Neural Network (GNN) based relational module and a recurrent neural network based NLP module to describe relations between 3D objects of an indoor scene.</li>
+                            <li>Furthermore, I have done end-to-end training and optimization of the neural network on remote Google Cloud Platform servers.</li>
+                            <li>I also supported my teammate on implementing S2C-MMT, which achieved SOTA results on 2 of the 5 quantitative criteria. Built upon a PointNet++ backbone, S2C-MMT partially or fully replaces the relational module and NLP module with the Meshed Memory Transformer (MMT).</li>
+                        </ul>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D Computer Vision</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GNN</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">RNN</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transformers</span>
                         </div>
                     </div>
                 </div>
@@ -189,15 +314,24 @@
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Social Navigation with Reinforcement Learning</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/tum-adlr-ss22-05" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/tum-adlr-ss22-05" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">Trained an agent to navigate in dynamic environments using reinforcement learning and curriculum learning.</p>
+                        <p class="text-gray-600 mb-4 brief-description">Trained an agent to navigate in dynamic environments using reinforcement learning and curriculum learning.</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>Identified and proposed a promising robotics research project concerning social navigation - autonomous navigation of a robot in a dynamic environment filled with pedestrians</li>
+                            <li>Extended and improved the world simulation by adding static obstacles and limited field of view constraints.</li>
+                            <li>As a team, developed a new RL agent with an extended version of the baseline.</li>
+                            <li>Intertwined training with world simulation extension via curriculum learning by optimizing the RL agent training with gradually increasing simulation difficulty.</li>
+                        </ul>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenAI Gym</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Reinforcement Learning</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Robotics</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
                         </div>
                     </div>
                 </div>
@@ -210,15 +344,27 @@
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Monocular Depth Estimation with Polarimetric Camera</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">A supervised monocular depth prediction model leveraging polarimetric characteristics of light. During the model development, particular emphasis was put on improvement of the depth estimation for photometrically challenging objects.</p>
+                        <p class="text-gray-600 mb-4 brief-description">A supervised monocular depth prediction model leveraging polarimetric
+                            characteristics of light. During the model development, particular emphasis was put on improvement of the depth
+                            estimation for photometrically challenging objects.</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>As a team of four, we proposed a monocular depth estimation model turning a video stream from a single polarimetric camera into dense depth prediction.</li>
+                            <li>We leveraged properties of polarized light to improve depth estimation reliability on photometrically challenging non-Lambertian materials.</li>
+                            <li>We demonstrated qualitative and quantitative improvements on transparent objects such as glass and on shiny surfaces such as metal.</li>
+                            <li>I focused on optimizing the neural network architecture by introducing modality specific encoders, channel-wise and spatial attention modules, and cross-component skip connections to push performance higher.</li>
+                        </ul>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Numpy</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Kornia</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CNN's</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Attention</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">U-Net</span>
                         </div>
                     </div>
                 </div>
@@ -231,15 +377,28 @@
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Autonomous Delivery Drone</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/ardrone_practicals_2021" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/ardrone_practicals_2021" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">Implemented localization, sensor fusion, navigation, control, and path planning of an autonomous drone.</p>
+                        <p class="text-gray-600 mb-4 brief-description">Implemented localization, sensor fusion, navigation, control, and path planning of an autonomous drone.</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>In a team of two, programmed AR Drone 2 to autonomously carry a packet between random start and end points within an
+                                environment with known 3D occupancy grid.</li>
+                                <li>Implemented manual steering of the drone using keyboard input with SDL2 library.</li>
+                                <li>Implemented and tuned a PID controller for feedback control from visual intertial state estimation signals.</li>
+                                <li>Implemented collision-avoidance capability, enabling safe navigation between user selected checkpoints when a log-odds occupancy map is given.</li>
+                                <li>Extended occlusion-aware navigation with A* trajectory search, yielding a reliably motion plan between start and end points.</li>
+                                <li>Further programmed and streamlined the autonomous packet delivery task and successfully completed the navigation challenge.</li>
+                        </ul>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">C++</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CMake</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gazebo</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">SDL2</span>
                         </div>
                     </div>
                 </div>
@@ -250,17 +409,26 @@
                          alt="Project 5" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold">Bimanual Robot Arm Programming</h3>
+                            <h3 class="text-xl font-bold">Shared Object Manipulation with Multiple Franka Robot Arms</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/Bimanual-Manipulation" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/Bimanual-Manipulation" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4">Programming two Franka Panda robot arms to achieve collaboration in CoppeliaSim (V-REP).</p>
+                        <p class="text-gray-600 mb-4 brief-description">Programming two Franka Panda robot arms to achieve collaboration in
+                            CoppeliaSim (V-REP), while avoiding self-collision and obstacles.</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description">
+                            <li>As a team of 5, took the robothon challenge of the Fundamentals of Human Centered Robotics course.</li>
+                            <li>Carried the team by taking the lead on 2/3 of the tasks.</li>
+                            <li>Programmed the robot for collision-checking from specific joint configurations.</li>
+                            <li>Programmed end-effector trajectory planning and shared object manipulation.</li>
+                        </ul>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Go</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lua</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">V-REP</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Physics Simulation</span>
                         </div>
                     </div>
                 </div>
@@ -275,6 +443,7 @@
             <div class="relative max-w-3xl mx-auto overflow-hidden">
             <div class="absolute h-full border border-gray-200 left-4 md:left-1/2 transform md:-translate-x-1/2 rounded-full"></div>
                 <!-- TODO: Desktop: On hover, Mobile: On click, expand; show description only then (description = what is written in <p class="text-gray-700">)  -->
+                
                 <!-- Timeline Item 1 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
                     <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
@@ -299,10 +468,12 @@
                             <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
                             <p class="text-gray-600 text-sm mb-2">April - November 2024</p>
                             <p class="text-gray-700">
-                                Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting:
-                                A real-time capable pixel-aligned Gaussian splatting-based method for
-                                realistic novel view synthesis of humans from sparse input images,
-                                enhancing flexibility by reducing reliance on priors and preprocessing:
+                                Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting
+                                <br>
+                                <button onclick="document.getElementById('thesis-project').scrollIntoView({ behavior: 'smooth' });" 
+                                    class="text-blue-600 hover:underline mb-4 transition">
+                                    Details → 
+                                </button>
                             </p>
                         </div>
                     </div>
@@ -326,6 +497,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Timeline Item 4 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
                     <div class="md:w-1/2 md:pl-12">
@@ -360,6 +532,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Timeline Item 6 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
                     <div class="md:w-1/2 md:pl-12">
@@ -632,6 +805,20 @@
                 this.reset();
             });
         }
+        
+        // Toggle project details
+        document.querySelectorAll('.toggle-details').forEach(button => {
+        button.addEventListener('click', function () {
+            const container = this.closest('div'); // or any common parent container
+            const brief = container.querySelector('.brief-description');
+            const detailed = container.querySelector('.detailed-description');
+
+            const isHidden = detailed.classList.contains('hidden');
+            detailed.classList.toggle('hidden', !isHidden);
+            brief.classList.toggle('hidden', isHidden);
+            this.textContent = isHidden ? 'Click to read less ←' : 'Click to read more →';
+        });
+    });
     </script>
 </body>
 </html>
