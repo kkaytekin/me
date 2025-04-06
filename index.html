@@ -73,7 +73,7 @@
                 <div class="flex space-x-4">
                     <a href="mailto:kkaytekin@gmail.com" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">Contact Me</a>
                     <a href="https://www.linkedin.com/in/kagan-kucukaytekin-8717a1107/" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
-                        <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/kkaytekin" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
                         <i class="fab fa-github"></i>
@@ -157,7 +157,9 @@
     <section id="projects" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
+            <!-- <div class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"> -->
+            <div class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
                 <!-- TEMPLATE - Uncomment below-->
                 <!-- <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <img src="FILL:ADD_IMG_HERE" 
@@ -201,40 +203,72 @@
                         <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
                             <li>
                                 Proposed a simpler and more flexible method than the existing methods:
-                                <table class="w-3/4 border-collapse border border-gray-400"> 
-                                    <thead>
-                                        <tr>
-                                            <th class="border border-gray-400 text-xs p-2">Method</th>
-                                            <th class="border border-gray-400 text-xs p-2">Priors</th>
-                                            <th class="border border-gray-400 text-xs p-2">Preprocessing</th>
-                                            <th class="border border-gray-400 text-xs p-2">Limitation</th>
-                                            <th class="border border-gray-400 text-xs p-2">#Params</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">GHG (ECCV24)</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template extraction, Texture-map rearrangement, Scaffold creation</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Fixed angle between cameras, Relies on good SMPL-X estimation</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">17.8M</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">GPS-Gaussian (CVPR24)</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Binocular-View</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Image Rectification</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Max. 72-degree baseline</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">5.5M</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs">Ours</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">Monocular-View</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
-                                            <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">3.5M</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="w-full">
+                                    <div class="hidden md:block">
+                                        <table class="w-full border-collapse border border-gray-400"> 
+                                            <thead>
+                                                <tr>
+                                                    <th class="border border-gray-400 text-xs p-2">Method</th>
+                                                    <th class="border border-gray-400 text-xs p-2">Priors</th>
+                                                    <th class="border border-gray-400 text-xs p-2">Preprocessing</th>
+                                                    <th class="border border-gray-400 text-xs p-2">Limitation</th>
+                                                    <th class="border border-gray-400 text-xs p-2">#Params</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">GHG (ECCV24)</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">SMPL-X Template extraction, Texture-map rearrangement, Scaffold creation</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">Fixed angle between cameras, Relies on good SMPL-X estimation</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">17.8M</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">GPS-Gaussian (CVPR24)</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">Binocular-View</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">Image Rectification</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">Max. 72-degree baseline</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">5.5M</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs">Ours</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">Monocular-View</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">None of the above</td>
+                                                    <td class="border border-gray-400 p-2 whitespace-normal text-xs font-bold">3.5M</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="block md:hidden">
+                                        <ul class="list-disc list-inside ml-6 text-sm">
+                                            <li>
+                                                <strong>Priors:</strong> 
+                                                <br>GHG (ECCV24): SMPL-X Template, 
+                                                <br>GPS-Gaussian (CVPR24): Binocular-View, 
+                                                <br>Ours: Monocular-View
+                                            </li>
+                                            <li>
+                                                <strong>Preprocessing:</strong> 
+                                                <br>GHG (ECCV24): SMPL-X Template extraction, Texture-map rearrangement, Scaffold creation, 
+                                                <br>GPS-Gaussian (CVPR24): Image Rectification, 
+                                                <br>Ours: None of the above
+                                            </li>
+                                            <li>
+                                                <strong>Limitation:</strong> 
+                                                <br>GHG (ECCV24): Fixed angle between cameras, Relies on good SMPL-X estimation, 
+                                                <br>GPS-Gaussian (CVPR24): Max. 72-degree baseline, 
+                                                <br>Ours: None of the above
+                                            </li>
+                                            <li>
+                                                <strong>#Params:</strong> 
+                                                <br>GHG (ECCV24): 17.8M, 
+                                                <br>GPS-Gaussian (CVPR24): 5.5M, 
+                                                <br>Ours: 3.5M
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 Developed a reliable pixel-aligned Gaussian Splatting method for generalizable 360-degree novel view synthesis of human heads from minimal input data and demonstrated capacity on the NPHM dataset.
@@ -272,11 +306,36 @@
                     </div>
                 </div>
                 
+                <!-- <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                    <img src="FILL:ADD_IMG_HERE" 
+                         alt="FILL: Add description" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">PROJECT NAME</h3>
+                            <div class="flex space-x-2">
+                                <a href="FILL:Add link to Github" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
+                                <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 brief-description">Add brief Description</p>
+                        <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                            <li>item 1</li>
+                            <li>item 2</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Skill 1</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Skill 2</span>
+                        </div>
+                    </div>
+                </div> -->
+
+
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <!-- <img src="figures/Dense-Captioning-for-3D-Scenes-with-Transformers.jpg" 
                          alt="Project 1" class="w-full h-48 object-cover"> -->
                     <img src="https://github.com/kkaytekin/3DETR-S2C/raw/main/docs/Poster.jpg" 
-                         alt="Project 1" class="w-full h-48 object-cover">
+                         alt="ADL4CV Project - 3DETR-S2C" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Dense Captioning for 3D Scenes with Transformers</h3>
@@ -309,7 +368,7 @@
                 <!-- Project 2 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <img src="https://github.com/kkaytekin/tum-adlr-ss22-05/raw/master/pictures/limited_fov/slowing_down.gif" 
-                         alt="Project 2" class="w-full h-48 object-cover">
+                         alt="ADL4R - Social Navigation with Reinforcement Learning" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Social Navigation with Reinforcement Learning</h3>
@@ -321,7 +380,7 @@
                         <p class="text-gray-600 mb-4 brief-description">Trained an agent to navigate in dynamic environments using reinforcement learning and curriculum learning.</p>
                         <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
                         <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
-                            <li>Identified and proposed a promising robotics research project concerning social navigation - autonomous navigation of a robot in a dynamic environment filled with pedestrians</li>
+                            <li>Identified and proposed a promising robotics research project concerning social navigation - autonomous navigation of a robot in a dynamic environment filled with pedestrians.</li>
                             <li>Extended and improved the world simulation by adding static obstacles and limited field of view constraints.</li>
                             <li>As a team, developed a new RL agent with an extended version of the baseline.</li>
                             <li>Intertwined training with world simulation extension via curriculum learning by optimizing the RL agent training with gradually increasing simulation difficulty.</li>
@@ -339,7 +398,7 @@
                 <!-- Project 3 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <img src="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images/raw/main/docs/depth_gt_example.png" 
-                         alt="Project 3" class="w-full h-48 object-cover">
+                         alt="AT43DCV - Polarimetric Depth Estimation" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Monocular Depth Estimation with Polarimetric Camera</h3>
@@ -372,7 +431,7 @@
                 <!-- Project 4 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <img src="figures/ardrone_practical.png" 
-                         alt="Project 4" class="w-full h-48 object-cover">
+                         alt="Mobile Robotics Practical - Autonomous Delivery Drone" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Autonomous Delivery Drone</h3>
@@ -406,7 +465,7 @@
                 <!-- Project 5 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
                     <img src="https://github.com/kkaytekin/Bimanual-Manipulation/raw/main/images/om.gif" 
-                         alt="Project 5" class="w-full h-48 object-cover">
+                         alt="Fundamentals of Human Centered Robotics - Robothon Project" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Shared Object Manipulation with Franka Robot Arms</h3>
@@ -419,7 +478,7 @@
                             CoppeliaSim (V-REP), while avoiding self-collision and obstacles.</p>
                         <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
                         <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
-                            <li>As a team of 5, took the robothon challenge of the Fundamentals of Human Centered Robotics course.</li>
+                            <li>As a team of 5, we took the robothon challenge of the Fundamentals of Human Centered Robotics course.</li>
                             <li>Carried the team by taking the lead on 2/3 of the tasks.</li>
                             <li>Programmed the robot for collision-checking from specific joint configurations.</li>
                             <li>Programmed end-effector trajectory planning and shared object manipulation.</li>
