@@ -37,6 +37,14 @@
             background: #3b82f6;
             margin-top: 12px;
         }
+        .mermaid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
         </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -645,138 +653,141 @@
 
     <section id="timeline" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">Career Timeline</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <div id="mermaid-graph" class="overflow-x-auto">
-                    <pre class="mermaid">
-                        gitGraph BT:
-                            commit id:"2015"
-                            branch Education
-                            commit id:"Start BSC @ İTÜ - Mechanical Engineering"
-                            checkout Time
-                            commit id:"2016"
-                            checkout Education
-                            branch Engagement
-                            commit id:"Team Leader @ İTÜ Student Club for Entrepreneurship"
-                            checkout Education
-                            branch "Honors & Awards"
-                            commit id:"İTÜ 1974 Entrants Scholarship"
-                            commit id:"Accomodation in Prof. Süleyman Demirel's Dorm Room"
-                            checkout Education
-                            commit id:"Start Minor @ İTÜ - Industrial Design"
-                            checkout Time
-                            commit id:"2017"
-                            checkout Engagement
-                            commit id:"Math Teacher @ İTÜ Student Club for Volunteering"
-                            checkout Education
-                            branch "Exchange"
-                            commit id:"Erasmus @ TUM - Mechanical Engineering, Germany"
-                            checkout "Exchange"
-                            checkout Time
-                            commit id:"2018"
-                            checkout "Exchange"
-                            branch "Work Experience"
-                            commit id:"Product Mng. Workung Student @ RIO.cloud, Munich"
-                            checkout "Education"
-                            checkout Time
-                            commit id:"2019"
-                            checkout "Work Experience"
-                            commit id:"IT Rollout Working Student @ Mercedes-Benz, Istanbul"
-                            checkout Exchange
-                            commit id: "ATHENS @ KU Leuven, Belgium"     
-                            checkout Time
-                            commit id:"2020"
-                            checkout Education
-                            %%commit type: HIGHLIGHT id: "Finish BSc. & Minor @ İTÜ"
-                            commit id: "BSc." tag: "Finish BSc. & Minor @ İTÜ"
-                            checkout "Honors & Awards"
-                            commit id: "Finish BSc. at top 5%"
-                            commit id: "TEV & DAAD Scholarship"
-                            checkout Education
-                            commit id: "Start MSc. @ TUM - Robotics, Cognition, Intelligence"
-                            checkout Time
-                            commit id:"2021"
-                            checkout "Work Experience"
-                            commit id:"Robotics Working Student @ Iteratec GmbH, Munich"
-                            checkout Exchange
-                            commit id: "Athens Exchange @ Télécom Paris, France"
-                            checkout Time
-                            commit id:"2022"
-                            checkout Engagement
-                            commit id:"Student Representative @ Massmann Dormitory, Munich"
-                            checkout Education
-                            commit id:"Obtained 104/120 ECTS for MSc."
-                            branch Sabbatical
-                            commit id:"Started travelling"
-                            commit id:"Started DJ'ing"
-                            checkout Time
-                            commit id:"2023"
-                            checkout Sabbatical
-                            commit id:"Started a music band & written a song"
-                            checkout "Work Experience"
-                            commit id:"HiWi @ LMU Chair of Statistical Learning & Data Science, Munich"
-                            checkout Sabbatical
-                            commit id:"Co-organized & performed at Massmann Summer Festival"
-                            checkout "Work Experience"
-                            commit id:"Research Intern @ Huawei Research Center, Munich"
-                            checkout Time
-                            commit id:"2024"
-                            checkout Sabbatical
-                            commit id:"Started second music band & written 2 songs"
-                            checkout Exchange
-                            commit id:"ATHENS @ Warsaw University of Technology, Poland"
-                            checkout Education
-                            merge Sabbatical
-                            checkout "Work Experience"
-                            commit id:"Master Thesis @ Sony Europe, Stuttgart"
-                            checkout Education
-                            %%commit type: HIGHLIGHT id:"Finish MSc. @ TUM"
-                            commit id:"MSc." tag:"Finish MSc. @ TUM"
-                            checkout "Honors & Awards"
-                            commit id:"Finish MSc. with distinction (score range: 'Very Good')"
-                            checkout "Work Experience"
-                            commit id:"Machine Learning Engineer @ Sony Europe"
-                            checkout Time
-                            commit id:"2025"
-                    </pre>
+          <h2 class="text-3xl font-bold text-center mb-12 section-title">Career Timeline</h2>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div  id="mermaid-graph" class="overflow-x-auto">
+                <div class="min-w-[800px]">
+                    <pre class="mermaid" id="timeline-mermaid"></pre>
                 </div>
             </div>
+          </div>
         </div>
-        <script type="module">
-            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-            mermaid.initialize({
-                startOnLoad: true,
-                theme: 'base',
-                themeVariables: {
-                    'commitLabelFontSize': '#16px',
-                    'gitGraph.nodeSpacing': 50,  /* Increase spacing between nodes */
-                    'gitGraph.branchSpacing': 80, /* Increase spacing between branches */
-                    'gitGraph.levelSpacing': 70   /* Adjust the level spacing */
-                },
-                gitGraph: {
-                    showBranches: true,
-                    showCommitLabel: true,
-                    mainBranchName: 'Time',
-                    rotateCommitLabel: true,
-                    parallelCommits: false,
-                }
-            });
-        </script>
-            <style>
-                .mermaid {
-                    width: 100%;
-                    max-width: 100%;
-                    margin: 0 auto;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .mermaid svg {
-                    width: 200%;
-                    height: auto;
-                }
-            </style>
     </section>
+      
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      
+        const diagramBT = `gitGraph BT:
+          commit id:"2015"
+          branch Education
+          commit id:"Start BSC @ İTÜ - Mechanical Engineering"
+          checkout Time
+          commit id:"2016"
+          checkout Education
+          branch Engagement
+          commit id:"Team Leader @ İTÜ Student Club for Entrepreneurship"
+          checkout Education
+          branch "Honors & Awards"
+          commit id:"İTÜ 1974 Entrants Scholarship"
+          commit id:"Accomodation in Prof. Süleyman Demirel's Dorm Room"
+          checkout Education
+          commit id:"Start Minor @ İTÜ - Industrial Design"
+          checkout Time
+          commit id:"2017"
+          checkout Engagement
+          commit id:"Math Teacher @ İTÜ Student Club for Volunteering"
+          checkout Education
+          branch "Exchange"
+          commit id:"Erasmus @ TUM - Mechanical Engineering, Germany"
+          checkout "Exchange"
+          checkout Time
+          commit id:"2018"
+          checkout "Exchange"
+          branch "Work Experience"
+          commit id:"Product Mng. Workung Student @ RIO.cloud, Munich"
+          checkout "Education"
+          checkout Time
+          commit id:"2019"
+          checkout "Work Experience"
+          commit id:"IT Rollout Working Student @ Mercedes-Benz, Istanbul"
+          checkout Exchange
+          commit id:"ATHENS @ KU Leuven, Belgium"     
+          checkout Time
+          commit id:"2020"
+          checkout Education
+          commit id:"BSc." tag:"Finish BSc. & Minor @ İTÜ"
+          checkout "Honors & Awards"
+          commit id:"Finish BSc. at top 5%"
+          commit id:"TEV & DAAD Scholarship"
+          checkout Education
+          commit id:"Start MSc. @ TUM - Robotics, Cognition, Intelligence"
+          checkout Time
+          commit id:"2021"
+          checkout "Work Experience"
+          commit id:"Robotics Working Student @ Iteratec GmbH, Munich"
+          checkout Exchange
+          commit id:"Athens Exchange @ Télécom Paris, France"
+          checkout Time
+          commit id:"2022"
+          checkout Engagement
+          commit id:"Student Representative @ Massmann Dormitory, Munich"
+          checkout Education
+          commit id:"Obtained 104/120 ECTS for MSc."
+          branch Sabbatical
+          commit id:"Started travelling & DJ'ing"
+          checkout Time
+          commit id:"2023"
+          checkout Sabbatical
+          commit id:"Started a music band & written a song"
+          checkout "Work Experience"
+          commit id:"HiWi @ LMU Chair of Statistical Learning & Data Science, Munich"
+          checkout Sabbatical
+          commit id:"Co-organized & performed at Massmann Summer Festival"
+          checkout "Work Experience"
+          commit id:"Research Intern @ Huawei Research Center, Munich"
+          checkout Time
+          commit id:"2024"
+          checkout Sabbatical
+          commit id:"Started second music band & written 2 songs"
+          checkout Exchange
+          commit id:"ATHENS @ Warsaw University of Technology, Poland"
+          checkout Education
+          merge Sabbatical
+          checkout "Work Experience"
+          commit id:"Master Thesis @ Sony Europe, Stuttgart"
+          checkout Education
+          commit id:"MSc." tag:"Finish MSc. @ TUM"
+          checkout "Honors & Awards"
+          commit id:"Finish MSc. with distinction (score range: 'Very Good')"
+          checkout "Work Experience"
+          commit id:"Machine Learning Engineer @ Sony Europe"
+          checkout Time
+          commit id:"2025"`;
+      
+        const diagramLR = diagramBT.replace("gitGraph BT:", "gitGraph LR:");
+      
+        const isMobile = window.innerWidth < 768;
+        const diagram = isMobile ? diagramLR : diagramBT;
+
+        const el = document.getElementById('timeline-mermaid');
+        el.textContent = diagram;
+
+        if (isMobile) {
+            document.querySelector('.mermaid').style.cssText = `
+                min-width: 2000px;
+                display: block;
+            `;
+        }
+
+        mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            'commitLabelFontSize': '#16px',
+            'gitGraph.nodeSpacing': 50,
+            'gitGraph.branchSpacing': 80,
+            'gitGraph.levelSpacing': 70,
+        },
+        gitGraph: {
+            showBranches: true,
+            showCommitLabel: true,
+            mainBranchName: 'Time',
+            rotateCommitLabel: true,
+            parallelCommits: false,
+        }
+        });
+    </script>
+
     <!-- Skills Section
     <section id="skills" class="py-16 bg-white">
         <div class="container mx-auto px-6">
