@@ -4,6 +4,7 @@ Please feel welcome to reach out for collaborations and also please please feel 
 # Change Log:
 
 ## 25/04/07
+- Added education section
 - Added first edition of career timeline, based on Git Diagrams of Mermaid. For mobile pages, it is horizontal.
 - Added publication with colleagues from Huawei Munich, see projects section.
 
