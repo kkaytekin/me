@@ -540,125 +540,186 @@
             <h2 class="text-3xl font-bold text-center mb-12 section-title">Work Experience</h2>
             <div class="relative max-w-3xl mx-auto overflow-hidden">
             <div class="absolute h-full border border-gray-200 left-4 md:left-1/2 transform md:-translate-x-1/2 rounded-full"></div>
-                <!-- TODO: Desktop: On hover, Mobile: On click, expand; show description only then (description = what is written in <p class="text-gray-700">)  -->
                 
                 <!-- Experience Item 1 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Machine Learning Engineer</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
-                            <p class="text-gray-600 text-sm mb-2">December 2024 - March 2025</p>
-                            <p class="text-gray-700">
-                                Contributed to video-based 3D avatar reconstruction using Gaussian Splatting and SMPL-X.
-                                Built synthetic dataset generation pipeline using Unreal Engine and Blender.
-                                Contributed to research on Egocentric vision, specifically on human mesh recovery from binocular wide-angle cameras.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Logo Div (Right) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/sony_logo.png" alt="Sony Logo" class="max-w-48 object-contain">
+                        </div>
+                        <!-- Content Div (Left) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-left">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Machine Learning Engineer</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
+                                <p class="text-gray-600 text-sm mb-2">December 2024 - March 2025</p>
+                                <button class="toggle-details text-blue-600 hover:underline mb-4">Details →</button>
+                                <div style="text-align: initial;">
+                                <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                                    <li>Contributed to video-based 3D avatar reconstruction using Gaussian Splatting and SMPL-X.</li>
+                                    <li>Built synthetic dataset generation pipeline using Unreal Engine and Blender.</li>
+                                    <li>Contributed to research on egocentric vision, specifically on human mesh recovery from binocular wide-angle cameras.</li>
+                                </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Experience Item 2 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Master Thesis</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
-                            <p class="text-gray-600 text-sm mb-2">April - November 2024</p>
-                            <p class="text-gray-700">
-                                Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting
-                                <br>
-                                <button onclick="document.getElementById('thesis-project').scrollIntoView({ behavior: 'smooth' });" 
-                                    class="text-blue-600 hover:underline mb-4 transition">
-                                    Details → 
-                                </button>
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Content Div (Left) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-right">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Master Thesis</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">Sony Europe B.V., Stuttgart</h4>
+                                <p class="text-gray-600 text-sm mb-2">April - November 2024</p>
+                                <p class="text-gray-700">
+                                    <button onclick="document.getElementById('thesis-project').scrollIntoView({ behavior: 'smooth' });" 
+                                        class="text-blue-600 hover:underline mb-4 transition">
+                                        Details → 
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Logo Div (Right) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/sony_logo.png" alt="Sony Logo" class="max-w-48 object-contain">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Experience Item 3 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Research Intern</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">Huawei Munich Research Center, Munich</h4>
-                            <p class="text-gray-600 text-sm mb-2">June - December 2023</p>
-                            <p class="text-gray-700">
-                                Worked on a publication focused on improving semantic segmentation for autonomous driving in challenging weather conditions.
-                                <button onclick="document.getElementById('huawei-publication').scrollIntoView({ behavior: 'smooth' });" 
-                                    class="text-blue-600 hover:underline mb-4 transition">
-                                    Details → 
-                                </button>
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Logo Div (Left) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/huawei_logo.png" alt="Huawei Logo" class="max-h-24 object-contain">
+                        </div>
+                        <!-- Content Div (Right) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-left">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Research Intern</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">Huawei Munich Research Center, Munich</h4>
+                                <p class="text-gray-600 text-sm mb-2">June - December 2023</p>
+                                <p class="text-gray-700">
+                                    <button onclick="document.getElementById('huawei-publication').scrollIntoView({ behavior: 'smooth' });" 
+                                        class="text-blue-600 hover:underline mb-4 transition">
+                                        Details → 
+                                    </button>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Experience Item 4 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Student Assistant (HiWi)</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">LMU Chair of Statistical Learning & Data Science, Munich</h4>
-                            <p class="text-gray-600 text-sm mb-2">April - September 2023</p>
-                            <p class="text-gray-700">
-                                To support ecology research, proposed leveraging pretrained monocular
-                                depth estimators for animal population estimation in the Bavarian forests.
-                                Demonstrated viability via Proof-of-Concept study. Built the basis for
-                                follow-up work. Identified research directions for ongoing research. Results
-                                and code are still in use for upcoming publications.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Content Div (Left) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-right">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Student Assistant (HiWi)</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">LMU Chair of Statistical Learning & Data Science, Munich</h4>
+                                <p class="text-gray-600 text-sm mb-2">April - September 2023</p>
+                                <button class="toggle-details text-blue-600 hover:underline mb-4">Details →</button>
+                                <div style="text-align: initial;">
+                                <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                                    <li>Developed monocular depth estimation techniques for animal population estimation in Bavarian forests, supporting the AI4Wildlife project.</li>
+                                    <li>Combined 3D computer vision and statistical knowledge to identify limitations in existing methods and implement novel solutions.</li>
+                                    <li>Rapidly developed and presented a successful Proof-of-Concept, autonomously establishing the groundwork for subsequent research whose results and code are still utilized in ongoing publications.</li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Logo Div (Right) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/lmu_logo.png" alt="LMU Logo" class="max-h-24 object-contain">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Experience Item 5 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Robotics Working Student</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">iteratec GmbH, Munich</h4>
-                            <p class="text-gray-600 text-sm mb-2">November 2021 - March 2022</p>
-                            <p class="text-gray-700">
-                                To achieve 2D-to-3D localization in a digital twin, explored traditional (SIFT,
-                                SURF, ORB, BRISK) and modern (SuperPoint, SuperGlue) feature extraction
-                                & matching methods. With high focus on code quality, actively participated
-                                in collaborative software development.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Logo Div (Left) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/iteratec_logo.png" alt="Iteratec Logo" class="max-h-24 object-contain">
+                        </div>
+                        <!-- Content Div (Right) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-left">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Working Student</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">iteratec GmbH, Munich</h4>
+                                <p class="text-gray-600 text-sm mb-2">November 2021 - March 2022</p>
+                                <button class="toggle-details text-blue-600 hover:underline mb-4">Details →</button>
+                                <div style="text-align: initial;">
+                                    <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                                        <li>Contributed to 2D-to-3D localization within a digital twin of an industrial facility.</li>
+                                        <li>Explored traditional (SIFT, SURF, ORB, BRISK) feature extraction & matching methods.</li>
+                                        <li>Explored modern (SuperPoint, SuperGlue) feature extraction & matching methods.</li>
+                                        <li>Actively participated in collaborative software development with high focus on code quality.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Experience Item 6 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">IT Rollout Working Student</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">Mercedes-Benz Turkey, Istanbul</h4>
-                            <p class="text-gray-600 text-sm mb-2">August 2019 - June 2020</p>
-                            <p class="text-gray-700">
-                                Streamlined reporting through Excel macros, led team workshops, created
-                                corporate mobile app mock-ups, and managed an Idea Management Portal.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                         <!-- Content Div (Left) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-right">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Working Student</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">Mercedes-Benz Turkey, Istanbul</h4>
+                                <p class="text-gray-600 text-sm mb-2">August 2019 - June 2020</p>
+                                <button class="toggle-details text-blue-600 hover:underline mb-4">Details →</button>
+                                <div style="text-align: initial;">
+                                    <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                                        <li>Worked in IT Rollout team of the Solutions Delivery Center, a consulting unit serving the Daimler Group business units around the globe.</li>
+                                        <li>Automated reporting through Excel macros.</li>
+                                        <li>Led team workshops on adaption of OKR based performance metrics.</li>
+                                        <li>Created mobile app mock-ups for internal use.</li>
+                                        <li>Administered an internal Idea Management Portal.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Logo Div (Right) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/mercedes_logo.png" alt="Mercedes-Benz Logo" class="max-h-24 object-contain">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Experience Item 7 -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Product Management Working Student</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">RIO.cloud, Munich</h4>
-                            <p class="text-gray-600 text-sm mb-2">February - September 2018</p>
-                            <p class="text-gray-700">
-                                Collaborated with senior Product Owner in Scrum setting, supported user
-                                tests, aided product development across lifecycle phases of software and
-                                hardware products, crafted user stories meeting customer needs, managed
-                                interdisciplinary teams, orchestrated real-world IoT hardware tests, and
-                                presented key outcomes.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Logo Div (Left) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/RIO_MAN_Logos.png" alt="RIO Logo" class="max-h-24 object-contain">
+                        </div>
+                        <!-- Content Div (Right) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-left">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">Working Student</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">RIO.cloud & MAN, Munich</h4>
+                                <p class="text-gray-600 text-sm mb-2">February - September 2018</p>
+                                <button class="toggle-details text-blue-600 hover:underline mb-4">Details →</button>
+                                <div style="text-align: initial;">
+                                    <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                                        <li>Collaborated with the senior Product Owner in a Scrum environment to drive product development.</li>
+                                        <li>Managed and coordinated interdisciplinary teams for real-world IoT hardware testing and analysis.</li>
+                                        <li>Supported user tests and contributed across the lifecycle of software and hardware products.</li>
+                                        <li>Crafted user stories tailored to customer needs and orchestrated IoT product tests with multiple vehicles and wireless solutions.</li>
+                                        <li>Analyzed telematics, CANBus, and Bluetooth beacon data; presented key outcomes to stakeholders.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -673,42 +734,57 @@
             <div class="relative max-w-3xl mx-auto overflow-hidden">
             <div class="absolute h-full border border-gray-200 left-4 md:left-1/2 transform md:-translate-x-1/2 rounded-full"></div>
                 
-                <!-- Education Item 1 -->
+                <!-- Education Item 1: MSc. TUM -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:ml-auto md:text-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">MSc. Robotics, Cognition & Intelligence</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">
-                                <br>Technical University of Munich 
-                                <br>School of Computation, Information, Technology
-                            </h4>
-                            <p class="text-gray-600 text-sm mb-2">April 2024 - November 2024</p>
-                            <p class="text-gray-600 text-sm mb-2">October 2020 - September 2022</p>
-                            <p class="text-gray-700">
-                                <br> Finished with distinction.
-                                <br>
-                                <button onclick="document.getElementById('thesis-project').scrollIntoView({ behavior: 'smooth' });" 
-                                    class="text-blue-600 hover:underline mb-4 transition">
-                                    Thesis →
-                                </button> 
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Content Div (Left) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-right">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">MSc. Robotics, Cognition & Intelligence</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">
+                                    <br>Technical University of Munich 
+                                    <br>School of Computation, Information, Technology
+                                </h4>
+                                <p class="text-gray-600 text-sm mb-2">April 2024 - November 2024</p>
+                                <p class="text-gray-600 text-sm mb-2">October 2020 - September 2022</p>
+                                <p class="text-gray-700">
+                                    <br> Finished with distinction.
+                                    <br>
+                                    <button onclick="document.getElementById('thesis-project').scrollIntoView({ behavior: 'smooth' });" 
+                                        class="text-blue-600 hover:underline mb-4 transition">
+                                        Thesis →
+                                    </button> 
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Logo Div (Right) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/tum_logo.png" alt="TUM Logo" class="max-h-24 object-contain">
                         </div>
                     </div>
                 </div>
-                
-                <!-- Education Item 2 -->
+
+                <!-- Education Item 2: BSc. ITU -->
                 <div class="mb-12 timeline-item relative pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">BSc. Mechanical Engineering</h3>
-                            <h4 class="text-gray-800 font-medium mb-3">
-                                <br>Istanbul Technical University
-                                <br>Faculty of Mechanical Engineering
-                            </h4>
-                            <p class="text-gray-600 text-sm mb-2">September 2015 - August 2020</p>
-                            <p class="text-gray-700">
-                                <br> Finished at top 5% of last 5 years.
-                            </p>
+                    <div class="md:flex md:items-stretch">
+                        <!-- Logo Div (Left) -->
+                        <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
+                            <img src="figures/logos/itu-logo.png" alt="ITU Logo" class="max-h-24 object-contain">
+                        </div>
+                        <!-- Content Div (Right) -->
+                        <div class="md:w-1/2 md:px-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md h-full md:text-left">
+                                <h3 class="text-xl font-bold text-blue-600 mb-2">BSc. Mechanical Engineering</h3>
+                                <h4 class="text-gray-800 font-medium mb-3">
+                                    <br>Istanbul Technical University
+                                    <br>Faculty of Mechanical Engineering
+                                </h4>
+                                <p class="text-gray-600 text-sm mb-2">September 2015 - August 2020</p>
+                                <p class="text-gray-700">
+                                    <br> Finished at the top 5% of last 5 years' graduates (1152 students).
+                                    <br> Minor in Industrial Design (Faculty of Architecture).
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -788,7 +864,7 @@
           checkout Engagement
           commit id:"Student Representative @ Massmann Dormitory, Munich"
           checkout Education
-          commit id:"Obtained 104/120 ECTS for MSc."
+          commit id:"104/120 ECTS earned in 4th Semester of MSc."
           branch Sabbatical
           commit id:"Started travelling & DJ'ing"
           checkout Time
@@ -988,7 +1064,6 @@
             </div>
         </div>
     </section> -->
-
 
     <!-- Contact Section
     <section id="contact" class="py-16 bg-white">
