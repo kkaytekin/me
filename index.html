@@ -811,6 +811,8 @@
           merge Sabbatical
           checkout "Work Experience"
           commit id:"Master Thesis @ Sony Europe, Stuttgart"
+          checkout Engagement
+          commit id:"Mentor @ TEV"
           checkout Education
           commit id:"Finish MSc. @ TUM" tag:"MSc. Robotics, Cognition, Intelligence"
           checkout "Honors & Awards"
@@ -821,19 +823,30 @@
           commit id:"2025"`;
       
         const diagramLR = diagramBT.replace("gitGraph BT:", "gitGraph LR:");
-      
-        const isMobile = window.innerWidth < 768;
-        const diagram = isMobile ? diagramLR : diagramBT;
 
+        // // Adaptive: Little bit hard to understand
+        // const isMobile = window.innerWidth < 768;
+        // const diagram = isMobile ? diagramLR : diagramBT;
+
+        // const el = document.getElementById('timeline-mermaid');
+        // el.textContent = diagram;
+
+        // if (isMobile) {
+        //     document.querySelector('.mermaid').style.cssText = `
+        //         min-width: 2000px;
+        //         display: block;
+        //     `;
+        // }
+        
+        // Non-adaptive: Only use LR
         const el = document.getElementById('timeline-mermaid');
+        const diagram = diagramLR;
         el.textContent = diagram;
-
-        if (isMobile) {
-            document.querySelector('.mermaid').style.cssText = `
+        document.querySelector('.mermaid').style.cssText = `
                 min-width: 2000px;
                 display: block;
             `;
-        }
+        
 
         mermaid.initialize({
         startOnLoad: true,
