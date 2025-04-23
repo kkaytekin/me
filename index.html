@@ -208,9 +208,9 @@
                     </div>
                 </div> -->
 
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300" id="thesis-project">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col" id="thesis-project">
                     <img src="figures/thesis_overview.png" alt="Thesis Project" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Master Thesis: Generalizable Human Novel View Synthesis with Pixel Aligned Gaussian Splatting</h3>
                             <div class="flex space-x-2">
@@ -315,25 +315,29 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Slurm</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Open3D</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NeRFStudio</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Neural Rendering</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D Reconstruction</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gausian Splatting</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transfer Learning</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Slurm</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Open3D</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NeRFStudio</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Neural Rendering</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D Reconstruction</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gausian Splatting</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transfer Learning</span>
+                            </div>
+                            <img src="figures/logos/sony_logo.png" alt="Sony Logo" class="max-w-16 object-contain" style="max-width:20%;">
+                            <img src="figures/logos/campvis_logo.png" alt="CAMP Chair Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Project -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300" id="huawei-publication">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col" id="huawei-publication">
                     <img src="figures/w-control-uda.png" 
                          alt="Huawei Publication" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Publication: W-Control UDA</h3>
                             <div class="flex space-x-2">
@@ -354,61 +358,78 @@
                             <li>Online ISSN: 2377-3766</li>
                             <li>DOI: 10.1109/LRA.2025.3544925</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Semantic Segmentation</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Distillation</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Autonomous Driving</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Generative Models</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GAN</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Diffusion</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch Lightning</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMSegmentation</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMCV</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMEngine</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Semantic Segmentation</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Distillation</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Autonomous Driving</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Generative Models</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GAN</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Diffusion</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch Lightning</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMSegmentation</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMCV</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MMEngine</span>
+                            </div>
+                        <img src="figures/logos/huawei_logo.png" alt="Huawei Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
 
                 <!-- Project -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col">
                     <!-- <img src="figures/Dense-Captioning-for-3D-Scenes-with-Transformers.jpg" 
-                         alt="Project 1" class="w-full h-48 object-cover"> -->
-                    <img src="https://github.com/kkaytekin/3DETR-S2C/raw/main/docs/Poster.jpg" 
-                         alt="ADL4CV Project - 3DETR-S2C" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                                         alt="Project 1" class="w-full h-48 object-cover"> -->
+                    <img src="https://github.com/kkaytekin/3DETR-S2C/raw/main/docs/Poster.jpg" alt="ADL4CV Project - 3DETR-S2C"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Dense Captioning for 3D Scenes with Transformers</h3>
                             <div class="flex space-x-2">
-                                <a href="https://github.com/kkaytekin/3DETR-S2C?tab=readme-ov-file" class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/kkaytekin/3DETR-S2C?tab=readme-ov-file"
+                                    class="text-blue-600 hover:text-blue-800 text-lg"><i class="fab fa-github"></i></a>
                                 <!-- <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a> -->
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-4 brief-description">Introduced transformers to different components of a 3D Dense Captioning pipeline to boost performance.</p>
+                        <p class="text-gray-600 mb-4 brief-description">Introduced transformers to different components of a 3D Dense
+                            Captioning pipeline to boost performance.</p>
                         <button class="toggle-details text-blue-600 hover:underline mb-4">Click to read more →</button>
-                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description" style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
-                            <li>As team, we proposed two architectures based on transformers to achieve state of the art performance in 3D Dense Captioning Task.</li>
+                        <ul class="text-gray-600 mb-4 list-disc list-inside hidden detailed-description"
+                            style="list-style-position: inside; text-indent: -1.5em; padding-left: 1em;">
+                            <li>As team, we proposed two architectures based on transformers to achieve state of the art performance in
+                                3D Dense Captioning Task.</li>
                             <li>I mainly focused on 3DETR-S2C, which achieved SOTA results on 3 of the 5 benchmarking criteria.</li>
-                            <li>Briefly, I integrated a transformer backbone to extract features and detect 3D bounding boxes from 3D point clouds, which are then processed further with a Graph Neural Network (GNN) based relational module and a recurrent neural network based NLP module to describe relations between 3D objects of an indoor scene.</li>
-                            <li>Furthermore, I have done end-to-end training and optimization of the neural network on remote Google Cloud Platform servers.</li>
-                            <li>I also supported my teammate on implementing S2C-MMT, which achieved SOTA results on 2 of the 5 quantitative criteria. Built upon a PointNet++ backbone, S2C-MMT partially or fully replaces the relational module and NLP module with the Meshed Memory Transformer (MMT).</li>
+                            <li>Briefly, I integrated a transformer backbone to extract features and detect 3D bounding boxes from 3D
+                                point clouds, which are then processed further with a Graph Neural Network (GNN) based relational module
+                                and a recurrent neural network based NLP module to describe relations between 3D objects of an indoor
+                                scene.</li>
+                            <li>Furthermore, I have done end-to-end training and optimization of the neural network on remote Google
+                                Cloud Platform servers.</li>
+                            <li>I also supported my teammate on implementing S2C-MMT, which achieved SOTA results on 2 of the 5
+                                quantitative criteria. Built upon a PointNet++ backbone, S2C-MMT partially or fully replaces the
+                                relational module and NLP module with the Meshed Memory Transformer (MMT).</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GNN</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">RNN</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transformers</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">3D</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GNN</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">RNN</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Transformers</span>
+                            </div>
+                            <img src="figures/logos/tum_visual_computing_lab_logo.png" alt="TUM Visual Computing Lab Logo"
+                                class="max-w-16 object-contain" style="max-width:30%;">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col">
                     <img src="https://github.com/kkaytekin/tum-adlr-ss22-05/raw/master/pictures/limited_fov/slowing_down.gif" 
                          alt="ADL4R - Social Navigation with Reinforcement Learning" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Social Navigation with Reinforcement Learning</h3>
                             <div class="flex space-x-2">
@@ -424,21 +445,24 @@
                             <li>As a team, developed a new RL agent with an extended version of the baseline.</li>
                             <li>Intertwined training with world simulation extension via curriculum learning by optimizing the RL agent training with gradually increasing simulation difficulty.</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenAI Gym</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Reinforcement Learning</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Robotics</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Pytorch</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenAI Gym</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Reinforcement Learning</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Robotics</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">GCP</span>
+                            </div>
+                            <img src="figures/logos/dlr_Logo.png" alt="DLR Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col">
                     <img src="https://github.com/kkaytekin/Supervised-Depth-Estimation-from-Polarized-Images/raw/main/docs/depth_gt_example.png" 
                          alt="AT43DCV - Polarimetric Depth Estimation" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Monocular Depth Estimation with Polarimetric Camera</h3>
                             <div class="flex space-x-2">
@@ -456,22 +480,25 @@
                             <li>We demonstrated qualitative and quantitative improvements on transparent objects such as glass and on shiny surfaces such as metal.</li>
                             <li>I focused on optimizing the neural network architecture by introducing modality specific encoders, channel-wise and spatial attention modules, and cross-component skip connections to push performance higher.</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Numpy</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Kornia</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CNN's</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Attention</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">U-Net</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Numpy</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Kornia</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CNN's</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Attention</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">U-Net</span>
+                            </div>
+                            <img src="figures/logos/campvis_logo.png" alt="CAMP Chair Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
     
                 <!-- Project 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col">
                     <img src="figures/ardrone_practical.png" 
                          alt="Mobile Robotics Practical - Autonomous Delivery Drone" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Autonomous Delivery Drone</h3>
                             <div class="flex space-x-2">
@@ -490,22 +517,25 @@
                                 <li>Extended occlusion-aware navigation with A* trajectory search, yielding a reliably motion plan between start and end points.</li>
                                 <li>Further programmed and streamlined the autonomous packet delivery task and successfully completed the navigation challenge.</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">C++</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CMake</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gazebo</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">SDL2</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">C++</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CMake</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Gazebo</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">OpenCV</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">SDL2</span>
+                            </div>
+                            <img src="figures/logos/smart_robotics_lab_logo.png" alt="Smart Robotics Lab Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
     
                 <!-- Project 5 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md project-card transition duration-300 flex flex-col">
                     <img src="https://github.com/kkaytekin/Bimanual-Manipulation/raw/main/images/om.gif" 
                          alt="Fundamentals of Human Centered Robotics - Robothon Project" class="w-full h-48 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold">Shared Object Manipulation with Franka Robot Arms</h3>
                             <div class="flex space-x-2">
@@ -522,11 +552,14 @@
                             <li>Programmed the robot for collision-checking from specific joint configurations.</li>
                             <li>Programmed end-effector trajectory planning and shared object manipulation.</li>
                         </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Go</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lua</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">V-REP</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Physics Simulation</span>
+                        <div class="flex justify-between items-center items-start mb-2 gap-1">
+                            <div class="flex-grow min-w-0 flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Go</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Lua</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">V-REP</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Physics Simulation</span>
+                            </div>
+                            <img src="figures/logos/mirmi_logo.webp" alt="MIRMI Logo" class="max-w-16 object-contain" style="max-width:20%;">
                         </div>
                     </div>
                 </div>
@@ -701,7 +734,7 @@
                     <div class="md:flex md:items-stretch">
                         <!-- Logo Div (Left) -->
                         <div class="hidden md:flex md:w-1/2 md:px-8 items-center justify-center">
-                            <img src="figures/logos/RIO_MAN_Logos.png" alt="RIO Logo" class="max-h-24 object-contain">
+                            <img src="figures/logos/rio_man_logos.png" alt="RIO Logo" class="max-h-24 object-contain">
                         </div>
                         <!-- Content Div (Right) -->
                         <div class="md:w-1/2 md:px-8">
