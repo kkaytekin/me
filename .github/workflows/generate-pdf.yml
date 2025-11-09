@@ -7,6 +7,7 @@ on:
     paths:
       - 'index.html'
       - 'figures/**'
+      - 'generate-pdf.js'
       - '.github/workflows/generate-pdf.yml'
   workflow_dispatch:  # Allow manual triggering
 
@@ -27,48 +28,11 @@ jobs:
 
       - name: Install Playwright
         run: |
-          npm install -g playwright
+          npm install playwright
           npx playwright install chromium --with-deps
 
       - name: Generate PDF
-        run: |
-          node -e "
-          const { chromium } = require('playwright');
-          const fs = require('fs');
-          const path = require('path');
-
-          (async () => {
-            const browser = await chromium.launch();
-            const context = await browser.newContext({
-              viewport: { width: 1920, height: 1080 },
-              deviceScaleFactor: 2
-            });
-            const page = await context.newPage();
-
-            // Load the HTML file
-            const htmlPath = 'file://' + path.resolve('index.html');
-            await page.goto(htmlPath, { waitUntil: 'networkidle' });
-
-            // Wait for mermaid diagram to render
-            await page.waitForTimeout(3000);
-
-            // Generate PDF
-            await page.pdf({
-              path: 'cv.pdf',
-              format: 'A4',
-              printBackground: true,
-              margin: {
-                top: '0.5cm',
-                right: '0.5cm',
-                bottom: '0.5cm',
-                left: '0.5cm'
-              }
-            });
-
-            await browser.close();
-            console.log('PDF generated successfully!');
-          })();
-          "
+        run: node generate-pdf.js
 
       - name: Commit PDF
         run: |
