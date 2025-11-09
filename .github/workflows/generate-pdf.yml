@@ -1,0 +1,83 @@
+name: Generate CV PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'figures/**'
+      - '.github/workflows/generate-pdf.yml'
+  workflow_dispatch:  # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm install -g playwright
+          npx playwright install chromium --with-deps
+
+      - name: Generate PDF
+        run: |
+          node -e "
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+          const path = require('path');
+
+          (async () => {
+            const browser = await chromium.launch();
+            const context = await browser.newContext({
+              viewport: { width: 1920, height: 1080 },
+              deviceScaleFactor: 2
+            });
+            const page = await context.newPage();
+
+            // Load the HTML file
+            const htmlPath = 'file://' + path.resolve('index.html');
+            await page.goto(htmlPath, { waitUntil: 'networkidle' });
+
+            // Wait for mermaid diagram to render
+            await page.waitForTimeout(3000);
+
+            // Generate PDF
+            await page.pdf({
+              path: 'cv.pdf',
+              format: 'A4',
+              printBackground: true,
+              margin: {
+                top: '0.5cm',
+                right: '0.5cm',
+                bottom: '0.5cm',
+                left: '0.5cm'
+              }
+            });
+
+            await browser.close();
+            console.log('PDF generated successfully!');
+          })();
+          "
+
+      - name: Commit PDF
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add cv.pdf
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-generate CV PDF [skip ci]"
+            git push
+          fi
