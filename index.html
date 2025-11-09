@@ -45,6 +45,80 @@
         justify-content: center;
         align-items: center;
         }
+
+        /* Print-specific styles for PDF generation */
+        @media print {
+            /* Remove header navigation for PDF */
+            header {
+                position: static !important;
+                box-shadow: none;
+                border-bottom: 2px solid #e5e7eb;
+            }
+
+            header nav,
+            #menu-toggle,
+            #mobile-menu {
+                display: none !important;
+            }
+
+            /* Ensure backgrounds are printed */
+            body {
+                background: white !important;
+            }
+
+            .bg-gradient {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            /* Page break optimization */
+            section {
+                page-break-inside: avoid;
+            }
+
+            .project-card,
+            .timeline-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            /* Remove hover effects for print */
+            .project-card:hover {
+                transform: none;
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            }
+
+            /* Ensure all backgrounds print correctly */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Make sure timeline diagram prints well */
+            .mermaid svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Hide "Details ->" buttons in print, show all content */
+            .toggle-details {
+                display: none !important;
+            }
+
+            .brief-description {
+                display: block !important;
+            }
+
+            .detailed-description {
+                display: block !important;
+            }
+
+            /* Hide download PDF button in print */
+            a[href="cv.pdf"] {
+                display: none !important;
+            }
+        }
         </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -101,7 +175,10 @@
                     <a href="https://github.com/kkaytekin" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition">
                         <i class="fab fa-github"></i>
                     </a>
-                    <!-- <a href="#" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">Download CV</a> -->
+                    <a href="cv.pdf" download class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
