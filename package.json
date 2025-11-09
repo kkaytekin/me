@@ -1,0 +1,19 @@
+{
+  "name": "cv-website",
+  "version": "1.0.0",
+  "description": "Personal CV website with automated PDF generation",
+  "scripts": {
+    "test-pdf": "node generate-pdf.js",
+    "install-browsers": "npx playwright install chromium --with-deps"
+  },
+  "keywords": [
+    "cv",
+    "pdf",
+    "playwright"
+  ],
+  "author": "Kağan K. Aytekin",
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}
