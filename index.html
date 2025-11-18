@@ -85,6 +85,116 @@
             height: 6px;
             border-radius: 3px;
         }
+        /* Professional Matrix Design */
+        .matrix-category {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .matrix-category:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: #3b82f6;
+        }
+        .matrix-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f3f4f6;
+        }
+        .matrix-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            flex-shrink: 0;
+        }
+        .tier-section {
+            margin-bottom: 20px;
+        }
+        .tier-section:last-child {
+            margin-bottom: 0;
+        }
+        .tier-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tier-label::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .tier-core .tier-label {
+            color: #1e40af;
+        }
+        .tier-core .tier-label::before {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .tier-proficient .tier-label {
+            color: #2563eb;
+        }
+        .tier-proficient .tier-label::before {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+        }
+        .tier-familiar .tier-label {
+            color: #3b82f6;
+        }
+        .tier-familiar .tier-label::before {
+            background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: default;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .tier-core .skill-tag {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+        .tier-proficient .skill-tag {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #1e3a8a;
+            border: 1px solid #bfdbfe;
+        }
+        .tier-familiar .skill-tag {
+            background: #f8fafc;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -201,6 +311,7 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                     <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
                     <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                     <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
                     <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
@@ -214,6 +325,7 @@
         <nav id="mobile-menu" class="hidden flex flex-col space-y-4 px-6 py-4 bg-white shadow-md md:hidden">
             <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
             <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
             <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
             <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
             <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
@@ -1196,127 +1308,135 @@
         });
     </script>
 
-    <!-- Skills Section
-    <section id="skills" class="py-16 bg-white">
+    <!-- Skills Section: Professional Matrix Design -->
+    <section id="skills" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">My Skills</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Technical Skills</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">JavaScript</span>
-                                    <span class="text-gray-500">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">React/Node.js</span>
-                                    <span class="text-gray-500">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Python</span>
-                                    <span class="text-gray-500">80%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Technical Expertise</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Organized by domain with clear proficiency tiers: Core, Proficient, and Familiar
+            </p>
+
+            <!-- Machine Learning & Computer Vision -->
+            <div class="matrix-category">
+                <div class="matrix-header">
+                    <div class="matrix-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Machine Learning & Computer Vision</h3>
+                        <p class="text-gray-600 text-sm mt-1">Deep learning, neural networks, and image processing</p>
                     </div>
                 </div>
-                
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Tools & Platforms</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">AWS/GCP</span>
-                                    <span class="text-gray-500">85%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Docker/Kubernetes</span>
-                                    <span class="text-gray-500">75%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">CI/CD</span>
-                                    <span class="text-gray-500">88%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 88%"></div>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="tier-section tier-core">
+                    <div class="tier-label">Core Expertise</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fas fa-fire"></i> PyTorch</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i> NumPy</span>
+                        <span class="skill-tag"><i class="fas fa-eye"></i> OpenCV</span>
+                        <span class="skill-tag"><i class="fas fa-camera"></i> Kornia</span>
                     </div>
                 </div>
-                
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Soft Skills</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Leadership</span>
-                                    <span class="text-gray-500">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Communication</span>
-                                    <span class="text-gray-500">92%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 92%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Problem Solving</span>
-                                    <span class="text-gray-500">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="tier-section tier-proficient">
+                    <div class="tier-label">Proficient</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-network-wired"></i> TensorFlow</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Scikit-learn</span>
+                        <span class="skill-tag"><i class="fas fa-table"></i> Pandas</span>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-familiar">
+                    <div class="tier-label">Familiar</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-project-diagram"></i> MediaPipe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robotics & 3D Systems -->
+            <div class="matrix-category">
+                <div class="matrix-header">
+                    <div class="matrix-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Robotics & 3D Systems</h3>
+                        <p class="text-gray-600 text-sm mt-1">Robotic frameworks, 3D reconstruction, and simulation</p>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-core">
+                    <div class="tier-label">Core Expertise</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-cuttlefish"></i> C++</span>
+                        <span class="skill-tag"><i class="fas fa-cog"></i> ROS</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i> Open3D</span>
+                        <span class="skill-tag"><i class="fas fa-microchip"></i> CUDA</span>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-proficient">
+                    <div class="tier-label">Proficient</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-cubes"></i> Gazebo</span>
+                        <span class="skill-tag"><i class="fas fa-hammer"></i> CMake</span>
+                        <span class="skill-tag"><i class="fas fa-vr-cardboard"></i> NeRFStudio</span>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-familiar">
+                    <div class="tier-label">Familiar</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-gamepad"></i> SDL2</span>
+                        <span class="skill-tag"><i class="fas fa-rocket"></i> Rerun</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Engineering & DevOps -->
+            <div class="matrix-category">
+                <div class="matrix-header">
+                    <div class="matrix-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Software Engineering & DevOps</h3>
+                        <p class="text-gray-600 text-sm mt-1">Version control, containerization, and development tools</p>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-core">
+                    <div class="tier-label">Core Expertise</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-vial"></i> Pytest</span>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-proficient">
+                    <div class="tier-label">Proficient</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub Actions</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> Slurm</span>
+                        <span class="skill-tag"><i class="fas fa-book"></i> Sphinx</span>
+                    </div>
+                </div>
+
+                <div class="tier-section tier-familiar">
+                    <div class="tier-label">Familiar</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-check-circle"></i> Flake8</span>
+                        <span class="skill-tag"><i class="fas fa-palette"></i> Black</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- Contact Section
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
