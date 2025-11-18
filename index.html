@@ -1048,7 +1048,15 @@
 
     <section id="timeline" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-12 section-title">Career Timeline</h2>
+          <h2 class="text-3xl font-bold text-center mb-8 section-title">Career Timeline</h2>
+          <div class="text-center mb-6">
+            <p class="text-gray-600 mb-2">
+              Professional milestones and personal passions, intertwined.
+            </p>
+            <p class="text-sm text-blue-600 font-medium">
+              <i class="fas fa-hand-pointer mr-2"></i>Click on commits in the Sabbatical & Life Passions branches to discover my hobbies!
+            </p>
+          </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
             <div  id="mermaid-graph" class="overflow-x-auto">
                 <div class="min-w-[800px]">
@@ -1124,20 +1132,31 @@
           commit id:"2023"
           checkout Sabbatical
           commit id:"Started a music band & written a song"
+          branch "Life Passions"
+          commit id:"🎵 Organizing Music Events" type: HIGHLIGHT
+          commit id:"💪 Leading Team Gym Sessions" type: HIGHLIGHT
+          checkout Sabbatical
           checkout "Work Experience"
           commit id:"HiWi @ LMU Chair of Statistical Learning & Data Science, Munich"
           checkout Sabbatical
           commit id:"Co-organized & performed at Massmann Summer Festival"
+          checkout "Life Passions"
+          commit id:"🏔️ Hiking Alpine Trails" type: HIGHLIGHT
+          commit id:"🎤 Public Speaking & Presentations" type: HIGHLIGHT
           checkout "Work Experience"
           commit id:"Research Intern @ Huawei Research Center, Munich"
           checkout Time
           commit id:"2024"
           checkout Sabbatical
           commit id:"Started second music band & written 2 songs"
+          checkout "Life Passions"
+          commit id:"🎧 DJ Performances & Mixing" type: HIGHLIGHT
+          commit id:"🌍 Cultural Exploration & Travel" type: HIGHLIGHT
           checkout Exchange
           commit id:"ATHENS @ Warsaw University of Technology, Poland"
           checkout Education
           merge Sabbatical
+          merge "Life Passions"
           checkout "Work Experience"
           commit id:"Master Thesis @ Sony Europe, Stuttgart"
           checkout Engagement
@@ -1443,6 +1462,165 @@
             this.textContent = isHidden ? 'Click to read less ←' : 'Click to read more →';
         });
         });
+
+        // Timeline hobbies interaction
+        // Wait for Mermaid to render, then add click handlers
+        setTimeout(() => {
+            const hobbyCommits = {
+                '🎵 Organizing Music Events': {
+                    title: 'Organizing Music Events',
+                    icon: 'fas fa-music',
+                    description: 'From concept to execution, I\'ve organized 15+ music events bringing together 200+ attendees for unforgettable experiences.',
+                    stats: ['15+ Events', '200+ Attendees', 'Multiple Venues'],
+                    image: 'Music Event Organization - Add your event photo here'
+                },
+                '💪 Leading Team Gym Sessions': {
+                    title: 'Leading Team Workouts',
+                    icon: 'fas fa-dumbbell',
+                    description: 'Organizing and leading weekly group training sessions, building a community of 10+ dedicated members who push each other to new heights.',
+                    stats: ['5+ Years Training', '10+ Team Members', 'Weekly Sessions'],
+                    image: 'Group Training Photo - Add your gym group photo here'
+                },
+                '🏔️ Hiking Alpine Trails': {
+                    title: 'Conquering Alpine Peaks',
+                    icon: 'fas fa-mountain',
+                    description: 'Hiking teaches patience, perseverance, and the reward of reaching new heights — both literally and metaphorically.',
+                    stats: ['Multiple Summits', 'Alpine Adventures', 'Nature Explorer'],
+                    image: 'Mountain Hiking - Add your hiking photo here'
+                },
+                '🎤 Public Speaking & Presentations': {
+                    title: 'Public Speaking & Leadership',
+                    icon: 'fas fa-presentation',
+                    description: 'Communicating complex ideas clearly and confidently on stage, inspiring audiences and driving meaningful conversations.',
+                    stats: ['Multiple Events', 'Technical Talks', 'Team Leadership'],
+                    image: 'Stage Presentation - Add your presentation photo here'
+                },
+                '🎧 DJ Performances & Mixing': {
+                    title: 'DJing & Music Mixing',
+                    icon: 'fas fa-headphones',
+                    description: 'Crafting musical journeys through mixing and DJing, understanding how to read a crowd and create the perfect atmosphere.',
+                    stats: ['Electronic Music', 'Live Performances', 'Event DJ'],
+                    image: 'DJ Performance - Add your DJ photo here'
+                },
+                '🌍 Cultural Exploration & Travel': {
+                    title: 'Exploring New Cultures',
+                    icon: 'fas fa-globe',
+                    description: 'Traveling opens minds, builds empathy, and provides invaluable perspectives that enhance cross-cultural collaboration.',
+                    stats: ['Multiple Countries', 'Cultural Immersion', 'Global Mindset'],
+                    image: 'Travel Adventures - Add your travel photo here'
+                }
+            };
+
+            // Find all commit labels in the SVG
+            const svgElement = document.querySelector('.mermaid svg');
+            if (svgElement) {
+                const commitLabels = svgElement.querySelectorAll('text');
+                commitLabels.forEach(label => {
+                    const text = label.textContent.trim();
+                    if (hobbyCommits[text]) {
+                        // Make it clickable
+                        label.style.cursor = 'pointer';
+                        label.style.fontWeight = 'bold';
+                        label.style.fill = '#3b82f6';
+
+                        label.addEventListener('click', () => {
+                            showHobbyModal(hobbyCommits[text]);
+                        });
+
+                        // Also make the commit circle clickable
+                        const parent = label.closest('g');
+                        if (parent) {
+                            const circle = parent.querySelector('circle');
+                            if (circle) {
+                                circle.style.cursor = 'pointer';
+                                circle.style.fill = '#3b82f6';
+                                circle.addEventListener('click', () => {
+                                    showHobbyModal(hobbyCommits[text]);
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        }, 2000);
+
+        function showHobbyModal(hobby) {
+            const modal = document.getElementById('hobby-modal');
+            document.getElementById('modal-title').textContent = hobby.title;
+            document.getElementById('modal-description').textContent = hobby.description;
+            document.getElementById('modal-image-text').textContent = hobby.image;
+
+            const statsContainer = document.getElementById('modal-stats');
+            statsContainer.innerHTML = hobby.stats.map(stat =>
+                `<span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">${stat}</span>`
+            ).join('');
+
+            const icon = document.getElementById('modal-icon');
+            icon.className = hobby.icon + ' text-5xl mb-4';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Close modal
+        document.getElementById('close-modal')?.addEventListener('click', () => {
+            const modal = document.getElementById('hobby-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Close on background click
+        document.getElementById('hobby-modal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'hobby-modal') {
+                e.target.classList.add('hidden');
+                e.target.classList.remove('flex');
+            }
+        });
     </script>
+
+    <!-- Hobby Modal -->
+    <div id="hobby-modal" class="hidden fixed inset-0 bg-black bg-opacity-80 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div class="sticky top-0 bg-gradient text-white p-6 rounded-t-2xl flex justify-between items-start">
+                <div class="flex-1">
+                    <i id="modal-icon" class="fas fa-music text-5xl mb-4"></i>
+                    <h2 id="modal-title" class="text-3xl font-bold">Hobby Title</h2>
+                </div>
+                <button id="close-modal" class="text-white hover:text-gray-200 transition">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="p-8">
+                <!-- Image Placeholder -->
+                <div class="mb-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl p-12 text-center">
+                    <i class="fas fa-image text-6xl text-blue-400 mb-4"></i>
+                    <p id="modal-image-text" class="text-gray-700 font-medium">Add your photo here</p>
+                </div>
+
+                <!-- Description -->
+                <p id="modal-description" class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Description goes here
+                </p>
+
+                <!-- Stats -->
+                <div id="modal-stats" class="flex flex-wrap gap-2 mb-6">
+                    <!-- Stats populated dynamically -->
+                </div>
+
+                <!-- CTA -->
+                <div class="border-t pt-6 text-center">
+                    <p class="text-gray-600 mb-4">
+                        This is just one aspect of what makes me a well-rounded collaborator and team member.
+                    </p>
+                    <a href="#contact" onclick="document.getElementById('hobby-modal').classList.add('hidden')"
+                       class="inline-block bg-gradient text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                        Let's Work Together
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
