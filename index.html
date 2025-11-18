@@ -85,6 +85,123 @@
             height: 6px;
             border-radius: 3px;
         }
+        /* Skill Constellation Design */
+        .constellation-container {
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .constellation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, #e0e7ff 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .skill-category-section {
+            margin-bottom: 32px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .category-icon {
+            font-size: 1.8rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .skill-constellation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            position: relative;
+        }
+        .skill-orb {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-orb:hover {
+            transform: scale(1.15);
+            z-index: 10;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+        }
+        .skill-orb::after {
+            content: attr(data-level);
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: 500;
+        }
+        .skill-orb:hover::after {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
+        /* Expert - Largest, darkest blue */
+        .orb-expert {
+            width: 90px;
+            height: 90px;
+            font-size: 15px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+        }
+        /* Proficient - Medium-large, medium blue */
+        .orb-proficient {
+            width: 75px;
+            height: 75px;
+            font-size: 14px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            color: white;
+        }
+        /* Intermediate - Medium, light blue */
+        .orb-intermediate {
+            width: 60px;
+            height: 60px;
+            font-size: 13px;
+            background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+            color: #1e3a8a;
+        }
+        /* Familiar - Small, lightest blue */
+        .orb-familiar {
+            width: 50px;
+            height: 50px;
+            font-size: 12px;
+            background: linear-gradient(135deg, #93c5fd 0%, #dbeafe 100%);
+            color: #1e40af;
+        }
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -201,6 +318,7 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                     <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
                     <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                     <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
                     <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
@@ -214,6 +332,7 @@
         <nav id="mobile-menu" class="hidden flex flex-col space-y-4 px-6 py-4 bg-white shadow-md md:hidden">
             <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
             <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
+            <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">Skills</a>
             <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
             <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
             <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
@@ -1196,127 +1315,100 @@
         });
     </script>
 
-    <!-- Skills Section
+    <!-- Skills Section: Skill Constellation Design -->
     <section id="skills" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 section-title">My Skills</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
+            <h2 class="text-3xl font-bold text-center mb-4 section-title">Technical Expertise</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Hover over each skill orb to see proficiency level. Size indicates expertise depth.
+            </p>
+
+            <div class="constellation-container">
+                <!-- Machine Learning & Computer Vision -->
+                <div class="skill-category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Machine Learning & Computer Vision</h3>
+                    </div>
+                    <div class="skill-constellation">
+                        <div class="skill-orb orb-expert" data-level="Expert">Python</div>
+                        <div class="skill-orb orb-expert" data-level="Expert">PyTorch</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">NumPy</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">OpenCV</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">Kornia</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">TensorFlow</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">Scikit-learn</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">Pandas</div>
+                        <div class="skill-orb orb-familiar" data-level="Familiar">MediaPipe</div>
+                    </div>
+                </div>
+
+                <!-- Robotics & 3D Systems -->
+                <div class="skill-category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Robotics & 3D Systems</h3>
+                    </div>
+                    <div class="skill-constellation">
+                        <div class="skill-orb orb-expert" data-level="Expert">C++</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">ROS</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">Open3D</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">CUDA</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">Gazebo</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">CMake</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">NeRF</div>
+                        <div class="skill-orb orb-familiar" data-level="Familiar">SDL2</div>
+                        <div class="skill-orb orb-familiar" data-level="Familiar">Rerun</div>
+                    </div>
+                </div>
+
+                <!-- Software Engineering & DevOps -->
+                <div class="skill-category-section">
+                    <div class="category-header">
+                        <div class="category-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Technical Skills</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">JavaScript</span>
-                                    <span class="text-gray-500">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">React/Node.js</span>
-                                    <span class="text-gray-500">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Python</span>
-                                    <span class="text-gray-500">80%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Software Engineering & DevOps</h3>
                     </div>
-                </div>
-                
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Tools & Platforms</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">AWS/GCP</span>
-                                    <span class="text-gray-500">85%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Docker/Kubernetes</span>
-                                    <span class="text-gray-500">75%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">CI/CD</span>
-                                    <span class="text-gray-500">88%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 88%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-                    <div class="bg-gray-50 p-6 rounded-lg h-full">
-                        <div class="text-blue-600 text-3xl mb-4">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Soft Skills</h3>
-                        <div class="space-y-3">
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Leadership</span>
-                                    <span class="text-gray-500">90%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Communication</span>
-                                    <span class="text-gray-500">92%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 92%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-1">
-                                    <span class="text-gray-700">Problem Solving</span>
-                                    <span class="text-gray-500">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="bg-blue-600 skill-bar rounded-full" style="width: 95%"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="skill-constellation">
+                        <div class="skill-orb orb-expert" data-level="Expert">Git</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">Docker</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">Linux</div>
+                        <div class="skill-orb orb-proficient" data-level="Proficient">Pytest</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">CI/CD</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">Slurm</div>
+                        <div class="skill-orb orb-intermediate" data-level="Intermediate">Sphinx</div>
+                        <div class="skill-orb orb-familiar" data-level="Familiar">Flake8</div>
+                        <div class="skill-orb orb-familiar" data-level="Familiar">Black</div>
                     </div>
                 </div>
             </div>
+
+            <!-- Legend -->
+            <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm">
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);"></div>
+                    <span class="text-gray-700 font-medium">Expert (90px) - Production-ready mastery</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full" style="background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);"></div>
+                    <span class="text-gray-700 font-medium">Proficient (75px) - Strong working knowledge</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full" style="background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);"></div>
+                    <span class="text-gray-700 font-medium">Intermediate (60px) - Solid foundation</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 rounded-full" style="background: linear-gradient(135deg, #93c5fd 0%, #dbeafe 100%);"></div>
+                    <span class="text-gray-700 font-medium">Familiar (50px) - Practical experience</span>
+                </div>
+            </div>
         </div>
-    </section> -->
+    </section>
     <!-- Contact Section
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
