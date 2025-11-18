@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Main Page -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Profile Image -->
+    <image:image>
+      <image:loc>https://kkaytekin.github.io/me/figures/2024-07-21_Fotos-Kagan_05-k.png</image:loc>
+      <image:title>Kağan K. Aytekin - Professional Photo</image:title>
+      <image:caption>Machine Learning and Robotics Engineer</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/#about</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/#projects</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/#experience</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Education Section -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/#education</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Timeline Section -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/#timeline</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- CV PDF -->
+  <url>
+    <loc>https://kkaytekin.github.io/me/cv.pdf</loc>
+    <lastmod>2025-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
