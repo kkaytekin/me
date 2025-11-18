@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life in Motion - Kağan K. Aytekin</title>
+    <meta name="description" content="The passions and pursuits of Kağan K. Aytekin - exploring life beyond code.">
+    <link rel="canonical" href="https://kkaytekin.github.io/me/hobbies.html">
+    <link rel="icon" type="image/svg+xml" href="figures/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .bg-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+
+        /* Card hover effects */
+        .hobby-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Category filter buttons */
+        .filter-btn {
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+        }
+
+        /* Masonry grid layout */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 2rem;
+        }
+
+        /* Image placeholder */
+        .image-placeholder {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            color: #6366f1;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 8px;
+        }
+
+        /* Category badge on cards */
+        .card-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-blue-600">
+                    <i class="fas fa-arrow-left mr-2"></i>Back to CV
+                </a>
+                <div class="text-gray-600 font-medium">
+                    Life in Motion
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Life in Motion</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 mb-8">
+                Beyond algorithms and code, here's what fuels my passion,
+                shapes my character, and makes me a better collaborator.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-dumbbell mr-2"></i>Fitness Enthusiast
+                </span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-music mr-2"></i>Event Organizer
+                </span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-mountain mr-2"></i>Adventure Seeker
+                </span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-users mr-2"></i>Team Leader
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="bg-white py-8 sticky top-16 z-40 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="filter-btn active px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700" data-filter="all">
+                    <i class="fas fa-th mr-2"></i>All
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700" data-filter="fitness">
+                    <i class="fas fa-dumbbell mr-2"></i>Fitness
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700" data-filter="music">
+                    <i class="fas fa-music mr-2"></i>Music
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700" data-filter="travel">
+                    <i class="fas fa-globe mr-2"></i>Travel
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-700" data-filter="leadership">
+                    <i class="fas fa-users mr-2"></i>Leadership
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="masonry-grid" id="cards-container">
+
+                <!-- Card 1: Team Training -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="fitness" data-modal="modal-1">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-users-cog text-6xl mb-4"></i>
+                                <p>Team Training Session<br><span class="text-sm opacity-75">[Add group gym photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-blue-600">
+                            <i class="fas fa-dumbbell mr-1"></i>Fitness
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Leading Team Workouts</h3>
+                        <p class="text-gray-600 mb-4">
+                            Organizing and leading weekly group training sessions, building a community
+                            of 10+ dedicated members who push each other to new heights.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-4"><i class="fas fa-users mr-1"></i>10+ Members</span>
+                            <span><i class="fas fa-calendar mr-1"></i>Weekly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Music Events -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="music" data-modal="modal-2">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-guitar text-6xl mb-4"></i>
+                                <p>Music Event Organization<br><span class="text-sm opacity-75">[Add event photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-purple-600">
+                            <i class="fas fa-music mr-1"></i>Music
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Organizing Music Events</h3>
+                        <p class="text-gray-600 mb-4">
+                            From concept to execution, I've organized 15+ music events bringing together
+                            200+ attendees for unforgettable experiences.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span class="mr-4"><i class="fas fa-users mr-1"></i>200+ Attendees</span>
+                            <span><i class="fas fa-calendar-check mr-1"></i>15+ Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Stage Performance -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="music" data-modal="modal-3">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-microphone text-6xl mb-4"></i>
+                                <p>Live Performance<br><span class="text-sm opacity-75">[Add performance photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-purple-600">
+                            <i class="fas fa-music mr-1"></i>Music
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Performing Live</h3>
+                        <p class="text-gray-600 mb-4">
+                            Taking the stage to perform live music, channeling creativity and energy
+                            to connect with audiences and create memorable moments.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-heart mr-1"></i>Passion Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: DJ Sessions -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="music" data-modal="modal-4">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-headphones text-6xl mb-4"></i>
+                                <p>DJ Performance<br><span class="text-sm opacity-75">[Add DJ photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-purple-600">
+                            <i class="fas fa-music mr-1"></i>Music
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">DJing & Mixing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Crafting musical journeys through mixing and DJing, understanding how to
+                            read a crowd and create the perfect atmosphere.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-music mr-1"></i>Electronic Music</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Hiking & Nature -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="travel" data-modal="modal-5">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-mountain text-6xl mb-4"></i>
+                                <p>Mountain Hiking<br><span class="text-sm opacity-75">[Add hiking photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-green-600">
+                            <i class="fas fa-globe mr-1"></i>Travel
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Conquering Peaks</h3>
+                        <p class="text-gray-600 mb-4">
+                            Hiking teaches patience, perseverance, and the reward of reaching new heights —
+                            both literally and metaphorically.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-hiking mr-1"></i>Adventure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Travel & Exploration -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="travel" data-modal="modal-6">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-camera-retro text-6xl mb-4"></i>
+                                <p>Travel Adventures<br><span class="text-sm opacity-75">[Add travel photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-green-600">
+                            <i class="fas fa-globe mr-1"></i>Travel
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Exploring New Cultures</h3>
+                        <p class="text-gray-600 mb-4">
+                            Traveling opens minds, builds empathy, and provides invaluable perspectives
+                            that enhance cross-cultural collaboration.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-map-marked-alt mr-1"></i>Multiple Countries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Presentations -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="leadership" data-modal="modal-7">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-presentation text-6xl mb-4"></i>
+                                <p>Stage Presentation<br><span class="text-sm opacity-75">[Add presentation photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-orange-600">
+                            <i class="fas fa-users mr-1"></i>Leadership
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Public Speaking</h3>
+                        <p class="text-gray-600 mb-4">
+                            Communicating complex ideas clearly and confidently on stage,
+                            inspiring audiences and driving meaningful conversations.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-microphone-alt mr-1"></i>Multiple Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Team Collaboration -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="leadership" data-modal="modal-8">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-people-arrows text-6xl mb-4"></i>
+                                <p>Team Collaboration<br><span class="text-sm opacity-75">[Add team photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-orange-600">
+                            <i class="fas fa-users mr-1"></i>Leadership
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Leading Teams</h3>
+                        <p class="text-gray-600 mb-4">
+                            Facilitating collaboration, driving consensus, and empowering team members
+                            to achieve collective goals through effective leadership.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-hands-helping mr-1"></i>Teamwork</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Strength & Discipline -->
+                <div class="hobby-card bg-white rounded-xl shadow-md overflow-hidden fade-in" data-category="fitness" data-modal="modal-9">
+                    <div class="relative">
+                        <div class="image-placeholder">
+                            <div class="text-center">
+                                <i class="fas fa-medal text-6xl mb-4"></i>
+                                <p>Personal Achievement<br><span class="text-sm opacity-75">[Add achievement photo]</span></p>
+                            </div>
+                        </div>
+                        <div class="card-category text-blue-600">
+                            <i class="fas fa-dumbbell mr-1"></i>Fitness
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Building Strength & Discipline</h3>
+                        <p class="text-gray-600 mb-4">
+                            5+ years of consistent training, proving that dedication and persistence
+                            lead to remarkable transformations.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <span><i class="fas fa-trophy mr-1"></i>5+ Years</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Collaborate?</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8 opacity-90">
+                I bring passion, dedication, and a collaborative spirit to every project.
+                Let's create something amazing together.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition">
+                    Get In Touch
+                </a>
+                <a href="index.html" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition">
+                    View Full CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 Kağan K. Aytekin. Passionate about technology and life.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal Templates (Hidden by default) -->
+    <!-- You can add detailed modals for each card here if needed -->
+
+    <!-- JavaScript -->
+    <script>
+        // Category filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.hobby-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                // Filter cards
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        // Re-trigger fade in animation
+                        card.style.animation = 'none';
+                        setTimeout(() => {
+                            card.style.animation = 'fadeIn 0.5s ease-in';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Card click handlers (for future modal expansion)
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.dataset.modal;
+                console.log(`Opening modal: ${modalId}`);
+                // Add modal logic here if needed
+            });
+        });
+    </script>
+
+</body>
+</html>
