@@ -16,12 +16,10 @@
             background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
         }
 
-        /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Hero section with parallax effect */
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -47,7 +45,6 @@
             z-index: 2;
         }
 
-        /* Fade in on scroll animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -59,7 +56,6 @@
             transform: translateY(0);
         }
 
-        /* Image hover effects */
         .hobby-image {
             position: relative;
             overflow: hidden;
@@ -79,7 +75,6 @@
             transform: scale(1.1);
         }
 
-        /* Stats counter */
         .stat-number {
             font-size: 3rem;
             font-weight: 700;
@@ -89,33 +84,18 @@
             background-clip: text;
         }
 
-        /* Photo grid */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-        /* Category badge */
-        .category-badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        /* Section separator */
         .section-separator {
             height: 2px;
             background: linear-gradient(90deg, transparent, #3b82f6, transparent);
             margin: 4rem 0;
         }
 
-        /* Image placeholder styling */
         .image-placeholder {
             background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
             display: flex;
@@ -142,11 +122,10 @@
                 <a href="index.html" class="text-xl font-bold text-blue-600">
                     <i class="fas fa-arrow-left mr-2"></i>Back to CV
                 </a>
-                <div class="flex gap-6">
-                    <a href="#strength" class="text-gray-700 hover:text-blue-600 transition">Strength</a>
+                <div class="hidden md:flex gap-6">
+                    <a href="#gym" class="text-gray-700 hover:text-blue-600 transition">Gym</a>
                     <a href="#music" class="text-gray-700 hover:text-blue-600 transition">Music</a>
-                    <a href="#horizons" class="text-gray-700 hover:text-blue-600 transition">Travel</a>
-                    <a href="#leadership" class="text-gray-700 hover:text-blue-600 transition">Leadership</a>
+                    <a href="#travel" class="text-gray-700 hover:text-blue-600 transition">Travel</a>
                 </div>
             </div>
         </div>
@@ -155,35 +134,33 @@
     <!-- Hero Section -->
     <section class="hero-section bg-gradient">
         <div class="hero-content text-center text-white px-6">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Beyond the Algorithm</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-                Machine learning engineer by day, event organizer by night,
-                <br>and lifelong learner in between.
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Hey, this is me</h1>
+            <p class="text-xl md:text-2xl mb-4 max-w-3xl mx-auto opacity-90">
+                Outside of work, I spend my time lifting weights, organizing music gigs,
+                and getting lost in new places.
             </p>
             <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-80 mb-12">
-                Here's the human side you won't find in my CV — the passions,
-                experiences, and pursuits that make me who I am.
+                These are the things that keep me sane and make me who I am.
             </p>
-            <a href="#strength" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition">
-                Discover More
+            <a href="#gym" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition">
+                Scroll down
                 <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
     </section>
 
-    <!-- Building Strength Section -->
-    <section id="strength" class="py-24 bg-white">
+    <!-- Gym Section -->
+    <section id="gym" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
 
                 <div class="fade-in mb-16">
-                    <span class="category-badge">
-                        <i class="fas fa-dumbbell mr-2"></i>Physical Excellence
-                    </span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Building Strength,<br>Building Character</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl">
-                        In the gym, I've learned that consistency beats intensity, teamwork amplifies results,
-                        and the discipline required to show up every day translates directly to complex engineering challenges.
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">I lift heavy things</h2>
+                    <p class="text-xl text-gray-700 max-w-3xl leading-relaxed">
+                        Been hitting the gym for 5+ years now. What started as "I should probably get in shape"
+                        turned into a daily habit I can't imagine living without. There's something about
+                        the grind — setting a goal, showing up consistently, and watching yourself get stronger
+                        week by week.
                     </p>
                 </div>
 
@@ -191,15 +168,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 fade-in">
                     <div class="text-center p-6 bg-gray-50 rounded-xl">
                         <div class="stat-number mb-2">5+</div>
-                        <div class="text-gray-600 font-medium">Years Training</div>
+                        <div class="text-gray-600">Years of not skipping leg day</div>
                     </div>
                     <div class="text-center p-6 bg-gray-50 rounded-xl">
                         <div class="stat-number mb-2">10+</div>
-                        <div class="text-gray-600 font-medium">Team Members</div>
+                        <div class="text-gray-600">People in our training crew</div>
                     </div>
                     <div class="text-center p-6 bg-gray-50 rounded-xl">
-                        <div class="stat-number mb-2">100%</div>
-                        <div class="text-gray-600 font-medium">Commitment</div>
+                        <div class="stat-number mb-2">∞</div>
+                        <div class="text-gray-600">Pre-workout consumed</div>
                     </div>
                 </div>
 
@@ -217,19 +194,17 @@
                         <div class="image-placeholder">
                             <div class="text-center">
                                 <i class="fas fa-medal text-6xl mb-4"></i>
-                                <p>Achievement Moment<br><span class="text-sm opacity-75">[Add achievement/milestone photo]</span></p>
+                                <p>Progress Shot<br><span class="text-sm opacity-75">[Add achievement/milestone photo]</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-12 fade-in">
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-                        <p class="text-lg text-gray-700 italic">
-                            "Leading group training sessions taught me to motivate diverse teams toward shared goals —
-                            a skill I bring to every collaborative engineering project."
-                        </p>
-                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                        These days I organize group sessions a few times a week. It's cool seeing everyone push each other.
+                        Plus, having people expect you to show up is great motivation when you'd rather stay in bed.
+                    </p>
                 </div>
 
             </div>
@@ -238,19 +213,17 @@
 
     <div class="section-separator"></div>
 
-    <!-- Creating Connections Section -->
+    <!-- Music Section -->
     <section id="music" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
 
                 <div class="fade-in mb-16">
-                    <span class="category-badge">
-                        <i class="fas fa-music mr-2"></i>Creative Expression
-                    </span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Creating Connections<br>Through Music</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl">
-                        Organizing music events and performing on stage has sharpened my project management skills,
-                        attention to detail, and ability to create memorable experiences that bring people together.
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Music is my second language</h2>
+                    <p class="text-xl text-gray-700 max-w-3xl leading-relaxed">
+                        I've organized something like 15 music events over the years. From tiny basement shows
+                        to proper festivals with a couple hundred people. The chaos of coordinating sound,
+                        lights, timing, and making sure everyone has a good time is weirdly addictive.
                     </p>
                 </div>
 
@@ -258,15 +231,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 fade-in">
                     <div class="text-center p-6 bg-white rounded-xl shadow-sm">
                         <div class="stat-number mb-2">15+</div>
-                        <div class="text-gray-600 font-medium">Events Organized</div>
+                        <div class="text-gray-600">Events organized</div>
                     </div>
                     <div class="text-center p-6 bg-white rounded-xl shadow-sm">
                         <div class="stat-number mb-2">200+</div>
-                        <div class="text-gray-600 font-medium">Attendees Reached</div>
+                        <div class="text-gray-600">People at the biggest one</div>
                     </div>
                     <div class="text-center p-6 bg-white rounded-xl shadow-sm">
-                        <div class="stat-number mb-2">∞</div>
-                        <div class="text-gray-600 font-medium">Passion & Energy</div>
+                        <div class="stat-number mb-2">2</div>
+                        <div class="text-gray-600">Bands I've been in</div>
                     </div>
                 </div>
 
@@ -276,7 +249,7 @@
                         <div class="image-placeholder">
                             <div class="text-center">
                                 <i class="fas fa-microphone text-6xl mb-4"></i>
-                                <p>On Stage Performance<br><span class="text-sm opacity-75">[Add your performance photo]</span></p>
+                                <p>On Stage<br><span class="text-sm opacity-75">[Add your performance photo]</span></p>
                             </div>
                         </div>
                     </div>
@@ -284,7 +257,7 @@
                         <div class="image-placeholder">
                             <div class="text-center">
                                 <i class="fas fa-users text-6xl mb-4"></i>
-                                <p>Event Organization<br><span class="text-sm opacity-75">[Add event organizing photo]</span></p>
+                                <p>Behind the Scenes<br><span class="text-sm opacity-75">[Add event organizing photo]</span></p>
                             </div>
                         </div>
                     </div>
@@ -299,12 +272,10 @@
                 </div>
 
                 <div class="mt-12 fade-in">
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-                        <p class="text-lg text-gray-700 italic">
-                            "From coordinating technical setups to managing last-minute changes,
-                            music events taught me agile problem-solving under pressure — essential for any startup environment."
-                        </p>
-                    </div>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                        I also mess around with DJing when I get the chance. There's something satisfying about
+                        reading a crowd and knowing exactly what track to drop next. Plus, free entry to good parties.
+                    </p>
                 </div>
 
             </div>
@@ -313,19 +284,17 @@
 
     <div class="section-separator"></div>
 
-    <!-- Expanding Horizons Section -->
-    <section id="horizons" class="py-24 bg-white">
+    <!-- Travel Section -->
+    <section id="travel" class="py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
 
                 <div class="fade-in mb-16">
-                    <span class="category-badge">
-                        <i class="fas fa-globe mr-2"></i>Cultural Intelligence
-                    </span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Expanding Horizons<br>One Journey at a Time</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl">
-                        Traveling and hiking have taught me to embrace uncertainty, adapt to new environments,
-                        and appreciate diverse perspectives — qualities that fuel innovation in multicultural teams.
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">I like getting lost</h2>
+                    <p class="text-xl text-gray-700 max-w-3xl leading-relaxed">
+                        Hiking, traveling, exploring random cities — anything that gets me out of my usual routine.
+                        Some of my best ideas come when I'm halfway up a mountain or wandering through a place
+                        where I don't speak the language.
                     </p>
                 </div>
 
@@ -335,7 +304,7 @@
                         <div class="image-placeholder image-placeholder-small">
                             <div class="text-center">
                                 <i class="fas fa-mountain text-5xl mb-4"></i>
-                                <p>Hiking Adventure<br><span class="text-sm opacity-75">[Add hiking photo]</span></p>
+                                <p>Hiking<br><span class="text-sm opacity-75">[Add hiking photo]</span></p>
                             </div>
                         </div>
                     </div>
@@ -351,91 +320,40 @@
                         <div class="image-placeholder image-placeholder-small">
                             <div class="text-center">
                                 <i class="fas fa-compass text-5xl mb-4"></i>
-                                <p>Exploration<br><span class="text-sm opacity-75">[Add exploration photo]</span></p>
+                                <p>Exploration<br><span class="text-sm opacity-75">[Add another travel photo]</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="fade-in">
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-                        <p class="text-lg text-gray-700 italic">
-                            "Every summit climbed and culture explored reinforces my belief that the best solutions
-                            emerge when we step outside our comfort zones and embrace new perspectives."
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-
-    <!-- Leading & Inspiring Section -->
-    <section id="leadership" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-
-                <div class="fade-in mb-16">
-                    <span class="category-badge">
-                        <i class="fas fa-users mr-2"></i>Leadership & Impact
-                    </span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Leading & Inspiring<br>Through Action</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl">
-                        From presenting on stage to leading collaborative projects,
-                        I thrive on inspiring teams and communicating complex ideas with clarity and enthusiasm.
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                        Living in Munich during my masters was perfect for this — the Alps are right there,
+                        and pretty much every interesting European city is a cheap flight away.
+                        I took full advantage of that.
                     </p>
                 </div>
 
-                <!-- Photo Grid -->
-                <div class="photo-grid fade-in mb-12">
-                    <div class="hobby-image">
-                        <div class="image-placeholder">
-                            <div class="text-center">
-                                <i class="fas fa-presentation text-6xl mb-4"></i>
-                                <p>Stage Presentation<br><span class="text-sm opacity-75">[Add presentation photo]</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hobby-image">
-                        <div class="image-placeholder">
-                            <div class="text-center">
-                                <i class="fas fa-chalkboard-teacher text-6xl mb-4"></i>
-                                <p>Team Collaboration<br><span class="text-sm opacity-75">[Add group work photo]</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="fade-in">
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-                        <p class="text-lg text-gray-700 italic">
-                            "Whether on stage or in a brainstorming session, I've learned that great leadership
-                            is about empowering others to achieve what they didn't think was possible."
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
+    <!-- Final Section -->
     <section class="py-24 bg-gradient text-white">
         <div class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Create Something Amazing Together</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">That's pretty much it</h2>
                 <p class="text-xl mb-8 opacity-90">
-                    I bring technical excellence, creative problem-solving, and a collaborative spirit
-                    to every project. Ready to work with someone who's as passionate about people as they are about code?
+                    I work hard, I train hard, I make music, and I travel when I can.
+                    If you want to work with someone who's genuinely passionate about what they do
+                    (both in and out of the office), let's talk.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="index.html#contact" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition">
                         Get In Touch
                     </a>
                     <a href="index.html" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-800 transition">
-                        View Full CV
+                        Back to CV
                     </a>
                 </div>
             </div>
@@ -446,7 +364,7 @@
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <p class="text-gray-400">
-                © 2024 Kağan K. Aytekin. Built with passion, powered by curiosity.
+                © 2024 Kağan K. Aytekin
             </p>
             <div class="mt-4 flex justify-center gap-6">
                 <a href="https://github.com/kkaytekin" class="text-gray-400 hover:text-white transition">
