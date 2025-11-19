@@ -90,10 +90,10 @@
             background: white;
             border-radius: 12px;
             padding: 28px;
-            margin-bottom: 24px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
+            height: 100%;
         }
         .matrix-category:hover {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -1316,8 +1316,9 @@
                 Organized by domain with clear proficiency tiers: Core, Proficient, and Familiar
             </p>
 
-            <!-- Machine Learning & Computer Vision -->
-            <div class="matrix-category">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Machine Learning & Computer Vision -->
+                <div class="matrix-category">
                 <div class="matrix-header">
                     <div class="matrix-icon">
                         <i class="fas fa-brain"></i>
@@ -1434,6 +1435,7 @@
                         <span class="skill-tag"><i class="fas fa-palette"></i> Black</span>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
