@@ -85,17 +85,6 @@
             height: 6px;
             border-radius: 3px;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: 3px solid #bfdbfe;
-        }
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -107,14 +96,6 @@
             height: 3px;
             background: #3b82f6;
             margin-top: 12px;
-        }
-        .mermaid {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         }
 
         /* Print-specific styles for PDF generation */
@@ -148,8 +129,7 @@
                 page-break-inside: avoid;
             }
 
-            .project-card,
-            .timeline-item {
+            .project-card {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
@@ -166,11 +146,6 @@
                 print-color-adjust: exact;
             }
 
-            /* Make sure timeline diagram prints well */
-            .mermaid svg {
-                max-width: 100%;
-                height: auto;
-            }
 
             /* Hide "Details ->" buttons in print, show all content */
             .toggle-details {
@@ -203,7 +178,6 @@
                     <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
                     <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                     <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
-                    <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
                 </nav>
                 <button id="menu-toggle" class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-gray-700 text-xl"></i>
@@ -216,7 +190,6 @@
             <a href="#projects" class="text-gray-700 hover:text-blue-600 transition">Projects</a>
             <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
             <a href="#education" class="text-gray-700 hover:text-blue-600 transition">Education</a>
-            <a href="#timeline" class="text-gray-700 hover:text-blue-600 transition">Timeline</a>
         </nav>
     </header>
     
@@ -1045,156 +1018,6 @@
             </div>
         </div>
     </section>
-
-    <section id="timeline" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-12 section-title">Career Timeline</h2>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div  id="mermaid-graph" class="overflow-x-auto">
-                <div class="min-w-[800px]">
-                    <pre class="mermaid" id="timeline-mermaid"></pre>
-                </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    <!-- Also for the above section - "timeline": -->
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-      
-        const diagramBT = `gitGraph BT:
-          commit id:"2015"
-          branch Education
-          commit id:"Start BSC @ İTÜ - Faculty of Mechanical Engineering"
-          checkout Time
-          commit id:"2016"
-          checkout Education
-          branch Engagement
-          commit id:"Team Leader @ İTÜ Student Club for Entrepreneurship"
-          checkout Education
-          branch "Honors & Awards"
-          commit id:"İTÜ 1974 Entrants Scholarship"
-          commit id:"Accomodation in Prof. Süleyman Demirel's Dorm Room"
-          checkout Education
-          commit id:"Start Minor @ İTÜ - Industrial Design"
-          checkout Time
-          commit id:"2017"
-          checkout Engagement
-          commit id:"Math Teacher @ İTÜ Student Club for Volunteering"
-          checkout Education
-          branch "Exchange"
-          commit id:"Erasmus @ TUM - Mechanical Engineering, Germany"
-          checkout "Exchange"
-          checkout Time
-          commit id:"2018"
-          checkout "Exchange"
-          branch "Work Experience"
-          commit id:"Product Mng. Workung Student @ RIO.cloud, Munich"
-          checkout "Education"
-          checkout Time
-          commit id:"2019"
-          checkout "Work Experience"
-          commit id:"IT Rollout Working Student @ Mercedes-Benz, Istanbul"
-          checkout Exchange
-          commit id:"ATHENS @ KU Leuven, Belgium"     
-          checkout Time
-          commit id:"2020"
-          checkout Education
-          commit id:"Finish BSc. & Minor @ İTÜ" tag:"BSc. Mechanical Engineer"
-          checkout "Honors & Awards"
-          commit id:"Finish BSc. at top 5%"
-          commit id:"TEV & DAAD Scholarship"
-          checkout Education
-          commit id:"Start MSc. @ TUM Faculty of Informatics"
-          checkout Time
-          commit id:"2021"
-          checkout "Work Experience"
-          commit id:"Robotics Working Student @ Iteratec GmbH, Munich"
-          checkout Exchange
-          commit id:"ATHENS @ Télécom Paris, France"
-          checkout Time
-          commit id:"2022"
-          checkout Engagement
-          commit id:"Student Representative @ Massmann Dormitory, Munich"
-          checkout Education
-          commit id:"104/120 ECTS earned in 4th Semester of MSc."
-          branch Sabbatical
-          commit id:"Started travelling & DJ'ing"
-          checkout Time
-          commit id:"2023"
-          checkout Sabbatical
-          commit id:"Started a music band & written a song"
-          checkout "Work Experience"
-          commit id:"HiWi @ LMU Chair of Statistical Learning & Data Science, Munich"
-          checkout Sabbatical
-          commit id:"Co-organized & performed at Massmann Summer Festival"
-          checkout "Work Experience"
-          commit id:"Research Intern @ Huawei Research Center, Munich"
-          checkout Time
-          commit id:"2024"
-          checkout Sabbatical
-          commit id:"Started second music band & written 2 songs"
-          checkout Exchange
-          commit id:"ATHENS @ Warsaw University of Technology, Poland"
-          checkout Education
-          merge Sabbatical
-          checkout "Work Experience"
-          commit id:"Master Thesis @ Sony Europe, Stuttgart"
-          checkout Engagement
-          commit id:"Mentor @ TEV"
-          checkout Education
-          commit id:"Finish MSc. @ TUM" tag:"MSc. Robotics, Cognition, Intelligence"
-          checkout "Honors & Awards"
-          commit id:"MSc. Grade: Distinction"
-          checkout "Work Experience"
-          commit id:"Machine Learning Engineer @ Sony Europe"
-          checkout Time
-          commit id:"2025"`;
-      
-        const diagramLR = diagramBT.replace("gitGraph BT:", "gitGraph LR:");
-
-        // // Adaptive: Little bit hard to understand
-        // const isMobile = window.innerWidth < 768;
-        // const diagram = isMobile ? diagramLR : diagramBT;
-
-        // const el = document.getElementById('timeline-mermaid');
-        // el.textContent = diagram;
-
-        // if (isMobile) {
-        //     document.querySelector('.mermaid').style.cssText = `
-        //         min-width: 2000px;
-        //         display: block;
-        //     `;
-        // }
-        
-        // Non-adaptive: Only use LR
-        const el = document.getElementById('timeline-mermaid');
-        const diagram = diagramLR;
-        el.textContent = diagram;
-        document.querySelector('.mermaid').style.cssText = `
-                min-width: 2000px;
-                display: block;
-            `;
-        
-
-        mermaid.initialize({
-        startOnLoad: true,
-        theme: 'base',
-        themeVariables: {
-            'commitLabelFontSize': '#16px',
-            'gitGraph.nodeSpacing': 50,
-            'gitGraph.branchSpacing': 80,
-            'gitGraph.levelSpacing': 70,
-        },
-        gitGraph: {
-            showBranches: true,
-            showCommitLabel: true,
-            mainBranchName: 'Time',
-            rotateCommitLabel: true,
-            parallelCommits: false,
-        }
-        });
-    </script>
 
     <!-- Skills Section
     <section id="skills" class="py-16 bg-white">
